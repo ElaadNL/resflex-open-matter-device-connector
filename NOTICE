@@ -1,0 +1,95 @@
+resflex-open-matter-device-connector
+Copyright 2026 ElaadNL
+
+This product includes software developed by ElaadNL.
+
+================================================================================
+Vendored: esp-matter (EVSE simulator firmware)
+================================================================================
+
+This product includes software from the esp-matter project, vendored at the
+root of this repository (`components/`, `examples/`, `device_hal/`, `tools/`,
+`patches/`, `docs/`, and the supporting build files).
+
+  Original upstream:    https://github.com/espressif/esp-matter (branch `release/v1.4`)
+  Intermediate fork:    https://github.com/Computime-OSS/esp-matter (branch `evse-simulator-v1.4`)
+  Vendored from commit: 98ebf366d43836e0d37ba17ce46c150dcef964cb
+  License:              Apache License 2.0
+  Copyright:            Espressif Systems (Shanghai) PTE LTD, Project CHIP Authors,
+                        and esp-matter contributors
+
+The vendored code is maintained in this repository as a hard fork (no
+upstream-sync branch, no cherry-pick obligation).
+
+esp-matter's upstream NOTICE is retained verbatim as `NOTICE-esp-matter`,
+including the Matter SDK / Connectivity Standards Alliance notices, and is
+incorporated here by reference.
+
+--------------------------------------------------------------------------------
+Changes made to the upstream work (Apache License 2.0, Section 4(b))
+--------------------------------------------------------------------------------
+
+The `evse-simulator-v1.4` branch was taken from upstream `release/v1.4` at
+commit 7b6cf277. Work added after that fork point is © 2026 ElaadNL and is
+distributed under the Apache License 2.0. Specifically:
+
+  Added by ElaadNL (did not exist upstream):
+    - `examples/energy_evse/` — the Energy EVSE simulator, its device drivers,
+      and its host unit-test harness (161 files; the entire example is new).
+      Sources within it that derive from Matter SDK code retain Project CHIP
+      Authors' copyright alongside ElaadNL's.
+    - `patches/` — fork-only patches applied to the connectedhomeip submodule.
+    - `build_matter_evse.sh`, `generate_unit_tests_coverage.sh`,
+      `README-matter_evse.md` — fork build and test tooling.
+
+  Modified by ElaadNL:
+    - `components/esp_matter/esp_matter_delegate_callbacks.cpp`
+    - `.gitignore`
+
+  Removed during vendoring:
+    - Espressif-internal GitLab CI and GitHub automation targeting Espressif
+      infrastructure (see CHANGELOG.md).
+
+Third-party components vendored verbatim by the fork are not covered by
+ElaadNL's copyright; see the section below.
+
+Per-file copyright and licensing for the whole tree is declared in `REUSE.toml`.
+
+================================================================================
+Third-party components vendored within esp-matter
+================================================================================
+
+This product includes MIT-licensed components carried inside the esp-matter
+tree. See `LICENSES/MIT.txt` for the full license text.
+
+  Unity test framework
+    Copyright (c) 2007-2014 Mike Karlesky, Mark VanderVoord, Greg Williams
+    Location: `examples/energy_evse/test/host_test/`
+
+  QRCode library
+    Copyright (c) 2017 Richard Moore (https://github.com/ricmoo/QRCode)
+    Copyright (c) 2017 Project Nayuki (https://www.nayuki.io/page/qr-code-generator-library)
+    Location: `examples/demo/badge/components/qrcode/`
+
+Portions of the tree are licensed CC0-1.0; see `LICENSES/CC0-1.0.txt` and the
+per-path declarations in `REUSE.toml`.
+
+================================================================================
+Submodule: connectedhomeip (Matter SDK)
+================================================================================
+
+This product references the Matter SDK as a pinned Git submodule under
+`connectedhomeip/connectedhomeip/`.
+
+  Upstream:      https://github.com/espressif/connectedhomeip
+  Pinned commit: 8a70495a0578de0b1338199a670ac0a3d238ae3e
+  License:       Apache License 2.0
+  Copyright:     Project CHIP Authors and connectedhomeip contributors
+
+The submodule carries its own `LICENSE` and `NOTICE` files, which are
+incorporated here by reference. Fork-only patches from `patches/` are applied
+to it at build time; see `README-matter_evse.md`.
+
+================================================================================
+
+Full Apache License 2.0 text is available in `LICENSE`.

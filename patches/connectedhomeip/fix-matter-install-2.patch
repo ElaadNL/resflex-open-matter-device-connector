@@ -1,0 +1,13 @@
+diff --git a/pw_env_setup/py/pw_env_setup/cipd_setup/arm.json b/pw_env_setup/py/pw_env_setup/cipd_setup/arm.json
+index a5685b973..36642d5af 100644
+--- a/pw_env_setup/py/pw_env_setup/cipd_setup/arm.json
++++ b/pw_env_setup/py/pw_env_setup/cipd_setup/arm.json
+@@ -1,7 +1,7 @@
+ {
+   "packages": [
+     {
+-      "path": "fuchsia/third_party/armgcc/${platform}",
++      "path": "experimental/matter/zap/${platform}",
+       "platforms": [
+         "linux-amd64",
+         "linux-arm64",

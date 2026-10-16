@@ -1,0 +1,53 @@
+# SPDX-FileCopyrightText: ElaadNL
+# SPDX-License-Identifier: Apache-2.0
+
+menu "App Driver Configuration"
+
+    menu "Time Synchronization"
+
+        config ENABLE_MATTER_AUTHENTICATED_TIME_SYNC
+            bool "Enable Matter Time Synchronization cluster (CASE-authenticated)"
+            default y
+            help
+                Adds the Matter Time Synchronization cluster on the root endpoint so
+                administrators can set UTC time over CASE (authenticated). Prefer this
+                over plain SNTP. ESP-IDF does not currently implement Network Time
+                Security (NTS) for SNTP.
+
+        config NTP_SERVER_PRIMARY
+            string "Primary NTP server hostname"
+            depends on ENABLE_SNTP_TIME_SYNC
+            default "pool.ntp.org"
+            help
+                Hostname of the primary NTP/SNTP destination. All NTP destinations
+                must be disclosed here; the firmware does not embed undisclosed
+                fallback servers. Plain SNTP is unauthenticated — use Matter Time
+                Synchronization or an operator-controlled NTS/NTP gateway in production.
+
+        config NTP_SERVER_SECONDARY
+            string "Secondary NTP server hostname (optional)"
+            depends on ENABLE_SNTP_TIME_SYNC
+            default ""
+            help
+                Optional secondary NTP/SNTP destination. Leave empty to disable.
+                Must be an explicitly approved server; no hardcoded fallback is used.
+
+        config NTP_SERVER_TERTIARY
+            string "Tertiary NTP server hostname (optional)"
+            depends on ENABLE_SNTP_TIME_SYNC
+            default ""
+            help
+                Optional tertiary NTP/SNTP destination. Leave empty to disable.
+                Must be an explicitly approved server; no hardcoded fallback is used.
+
+        config NTP_SYNC_INTERVAL_DAYS
+            int "SNTP resync interval (days)"
+            depends on ENABLE_SNTP_TIME_SYNC
+            range 1 30
+            default 1
+            help
+                How often to re-synchronize wall-clock time via SNTP.
+
+    endmenu
+
+endmenu

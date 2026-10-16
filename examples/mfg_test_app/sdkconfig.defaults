@@ -1,0 +1,29 @@
+#enable lwip ipv6 autoconfig
+CONFIG_LWIP_IPV6_AUTOCONFIG=y
+
+# Use a custom partition table
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_FILENAME="partitions.csv"
+CONFIG_PARTITION_TABLE_OFFSET=0xC000
+
+#enable lwIP route hooks
+CONFIG_LWIP_HOOK_IP6_ROUTE_DEFAULT=y
+CONFIG_LWIP_HOOK_ND6_GET_GW_DEFAULT=y
+
+# Disable DS Peripheral
+CONFIG_ESP_SECURE_CERT_DS_PERIPHERAL=n
+
+# Read attestation data from secure cert partition 
+CONFIG_SEC_CERT_DAC_PROVIDER=y
+
+# Enable flash encryption and secure boot in release mode
+CONFIG_SECURE_BOOT=y
+CONFIG_SECURE_BOOT_SIGNING_KEY="secure_boot_signing_key.pem"
+CONFIG_SECURE_FLASH_ENC_ENABLED=y
+CONFIG_SECURE_FLASH_ENCRYPTION_MODE_RELEASE=y
+
+CONFIG_DEVICE_VENDOR_ID=0x131B
+
+# Disable STA and AP
+CONFIG_ENABLE_WIFI_STATION=n
+CONFIG_ENABLE_WIFI_AP=n

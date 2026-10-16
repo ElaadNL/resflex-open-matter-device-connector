@@ -1,0 +1,138 @@
+# SPDX-FileCopyrightText: ElaadNL
+#
+# SPDX-License-Identifier: Apache-2.0
+
+# Licensing for the vendored esp-matter tree. See NOTICE for provenance.
+#
+# ElaadNL-authored files declare themselves with in-file SPDX headers (or a
+# .license sidecar where a header would be unsafe, e.g. the patch file and
+# binary assets). This file therefore covers the untouched upstream tree, which
+# ships almost no per-file notices and which we keep byte-identical to upstream.
+#
+# Ordering matters: the broad Espressif fallback comes first, and the narrower
+# "override" blocks after it. Those overrides are load-bearing even where a file
+# already carries its own SPDX tags -- see the note on each.
+
+version = 1
+
+# --- Upstream esp-matter (fallback) -----------------------------------------
+# examples/ is enumerated rather than globbed because examples/energy_evse/ is
+# ElaadNL work declared in-file, and "aggregate" would add Espressif's copyright
+# on top of it.
+[[annotations]]
+path = [
+  "components/**",
+  "device_hal/**",
+  "tools/**",
+  "examples/all_device_types_app/**",
+  "examples/bridge_apps/**",
+  "examples/common/**",
+  "examples/controller/**",
+  "examples/demo/**",
+  "examples/door_lock/**",
+  "examples/generic_switch/**",
+  "examples/icd_app/**",
+  "examples/light/**",
+  "examples/light_switch/**",
+  "examples/light_wifi_prov/**",
+  "examples/managed_component_light/**",
+  "examples/mfg_test_app/**",
+  "examples/multiple_on_off_plugin_units/**",
+  "examples/ota_provider/**",
+  "examples/rainmaker/**",
+  "examples/refrigerator/**",
+  "examples/room_air_conditioner/**",
+  "examples/sensors/**",
+  "examples/thread_border_router/**",
+  "examples/zap_light/**",
+  "examples/.build-rules.yml",
+  "examples/pytest_esp_matter_light.py",
+  "docs/_static/**",
+  "docs/en/**",
+  "docs/README.md",
+  "docs/Doxyfile",
+  "docs/conf_common.py",
+  "docs/requirements.txt",
+  "docs/utils.sh",
+  "CMakeLists.txt",
+  "Kconfig",
+  "idf_component.yml",
+  "pytest.ini",
+  "install.sh",
+  "export.sh",
+  "generate-include-files.cmake",
+  ".clang-format",
+  ".gitignore",
+  ".gitmodules",
+  "requirements.txt",
+  "requirements_idf_v4.4.txt",
+  "RELEASE_NOTES.md",
+  "SUPPORTED_DEVICE_TYPES.md",
+  "NOTICE-esp-matter",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Espressif Systems (Shanghai) PTE LTD and esp-matter contributors"
+SPDX-License-Identifier = "Apache-2.0"
+
+# --- Upstream files owned by Project CHIP Authors ---------------------------
+# Do not delete entries here that appear redundant: the fallback above also
+# matches them, and would otherwise credit Project CHIP code to Espressif.
+[[annotations]]
+path = [
+  "generate-include-files.cmake",
+  "components/esp_matter/zap_common/zap-generated/endpoint_config.h",
+  "components/esp_matter/zap_common/zap-generated/gen_config.h",
+  "components/esp_matter_controller/core/esp_matter_controller_console.cpp",
+  "components/esp_matter_rainmaker/rainmaker.xml",
+  "examples/common/blemesh_platform/platform/ESP32_custom/BUILD.gn",
+  "examples/common/blemesh_platform/platform/ESP32_custom/nimble/BLEManagerImpl.cpp",
+  "examples/common/external_platform/BUILD.gn",
+  "examples/demo/badge/badge.xml",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "Project CHIP Authors"
+SPDX-License-Identifier = "Apache-2.0"
+
+# --- MIT components vendored inside esp-matter ------------------------------
+# Vendored verbatim, not authored by this fork, so no ElaadNL claim.
+[[annotations]]
+path = [
+  "examples/energy_evse/test/host_test/unity.c",
+  "examples/energy_evse/test/host_test/unity.h",
+  "examples/energy_evse/test/host_test/unity_internals.h",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2007-2014 Mike Karlesky, Mark VanderVoord, Greg Williams"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = [
+  "examples/demo/badge/components/qrcode/qrcode.c",
+  "examples/demo/badge/components/qrcode/qrcode.h",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2017 Richard Moore; 2017 Project Nayuki"
+SPDX-License-Identifier = "MIT"
+
+# --- CC0-1.0 upstream files -------------------------------------------------
+# Do not delete entries here that appear redundant: the fallback above also
+# matches them, and would otherwise declare these CC0 files Apache-2.0 as well.
+# pytest_esp_matter_light.py has no in-file copyright line at all.
+[[annotations]]
+path = [
+  "tools/ci/build_apps.py",
+  "examples/pytest_esp_matter_light.py",
+  "examples/controller/main/esp_ot_config.h",
+  "examples/thread_border_router/main/esp_ot_config.h",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "Espressif Systems (Shanghai) CO LTD"
+SPDX-License-Identifier = "CC0-1.0"
+
+# --- ElaadNL files without an in-file header --------------------------------
+# NOTICE is plain text and carries no SPDX tags.
+[[annotations]]
+path = ["NOTICE"]
+precedence = "override"
+SPDX-FileCopyrightText = "ElaadNL"
+SPDX-License-Identifier = "Apache-2.0"

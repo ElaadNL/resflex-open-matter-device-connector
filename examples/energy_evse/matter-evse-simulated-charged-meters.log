@@ -1,0 +1,2403 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037ebba
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x15a0
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xd20
+load:0x403cb700,len:0x2ee4
+entry 0x403c8928
+I (31) boot: ESP-IDF v5.4 2nd stage bootloader
+I (31) boot: compile time Apr 22 2026 17:34:32
+I (31) boot: Multicore bootloader
+I (31) boot: chip revision: v0.2
+I (34) boot: efuse block revision: v1.3
+I (38) boot.esp32s3: Boot SPI Speed : 80MHz
+I (42) boot.esp32s3: SPI Mode       : DIO
+I (45) boot.esp32s3: SPI Flash Size : 16MB
+I (49) boot: Enabling RNG early entropy source...
+I (54) boot: Partition Table:
+I (56) boot: ## Label            Usage          Type ST Offset   Length
+I (63) boot:  0 esp_secure_cert  unknown          3f 06 00010000 00002000
+I (69) boot:  1 nvs              WiFi data        01 02 00012000 0000f000
+I (76) boot:  2 nvs_keys         NVS keys         01 04 00021000 00002000
+I (82) boot:  3 otadata          OTA data         01 00 00023000 00002000
+I (89) boot:  4 phy_init         RF data          01 01 00025000 00001000
+I (95) boot:  5 ota_0            OTA app          00 10 00040000 00200000
+I (102) boot:  6 ota_1            OTA app          00 11 00240000 00200000
+I (108) boot:  7 fctry            WiFi data        01 02 00440000 0000f000
+I (115) boot: End of partition table
+I (118) esp_image: segment 0: paddr=00040020 vaddr=3c130020 size=3e108h (254216) map
+I (171) esp_image: segment 1: paddr=0007e130 vaddr=3fc9d800 size=01ee8h (  7912) load
+I (173) esp_image: segment 2: paddr=00080020 vaddr=42000020 size=120954h (1182036) map
+I (384) esp_image: segment 3: paddr=001a097c vaddr=3fc9f6e8 size=037ech ( 14316) load
+I (387) esp_image: segment 4: paddr=001a4170 vaddr=40374000 size=19734h (104244) load
+I (410) esp_image: segment 5: paddr=001bd8ac vaddr=600fe100 size=0001ch (    28) load
+I (421) boot: Loaded app from partition at offset 0x40000
+I (421) boot: Disabling RNG early entropy source...
+[0;32mI (431) cpu_start: Multicore app[0m
+[0;32mI (440) cpu_start: Pro cpu start user code[0m
+[0;32mI (440) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (440) app_init: Application information:[0m
+[0;32mI (443) app_init: Project name:     matter_charger[0m
+[0;32mI (448) app_init: App version:      1.0[0m
+[0;32mI (453) app_init: Compile time:     May  7 2026 11:20:46[0m
+[0;32mI (459) app_init: ELF file SHA256:  b643d167c...[0m
+[0;32mI (464) app_init: ESP-IDF:          v5.4[0m
+[0;32mI (469) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (474) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (479) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (483) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (491) heap_init: At 3FCB89F0 len 00030D20 (195 KiB): RAM[0m
+[0;32mI (497) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (503) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (509) heap_init: At 600FE11C len 00001ECC (7 KiB): RTCRAM[0m
+[0;32mI (516) spi_flash: detected chip: generic[0m
+[0;32mI (520) spi_flash: flash io: dio[0m
+[0;32mI (526) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (531) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (539) coexist: coex firmware version: 49a8cdc[0m
+[0;32mI (565) coexist: coexist rom version e7ae62f[0m
+[0;32mI (566) main_task: Started on CPU0[0m
+[0;32mI (576) main_task: Calling app_main()[0m
+app_main
+[0;32mFree memory: 239108 (DRAM/heap), 0 (IRAM)[0m
+app_main
+[0;32mIDF version: v5.4[0m
+[0;32mI (626) CT: app_main(53)
+[0;36mInitializing NVS Flash Done[0m
+[0m
+[0;32mI (626) CT: app_main(58)
+[0;36mInitializing Application Driver ...[0m
+[0m
+[0;32mI (626) CT: app_driver_init(30)
+[0;36mInitializing Main Charger ...[0m
+[0m
+init
+[0;32mCharger HW init done.[0m
+[0;32mI (636) CT: resetSessionData(223)
+[0;36mReset Session Data[0m
+[0m
+findNextStatus
+[0;32mCharger status changed:
+[0;33m[ AVAILABLE ] >>> [ UNAVAILABLE ][0m
+[0;32mI (656) CT: ChargerManager(675)
+[0;36mChargerManager created and background task started.[0m
+[0m
+[0;32mI (666) CT: handleStatus_Unavailable(125)
+[0;36mCharger is in UNAVAILABLE state, show unavailable message on UI[0m
+[0m
+start
+[0;32mCharger SW init done.[0m
+Init
+[0;32mInitializing Matter Energy EVSE ...[0m
+[0;32mI (696) CT: SetAvailableEndpointIds(66)
+[0;36mSet Available Endpoints Idx:0=1[0m
+[0m
+InitializeMatterDeviceNode
+[0;32mMatter EVSE Device created![0m
+StartMatterStack
+[0;32mStart Matter SDK ...[0m
+[0;32mI (706) pp: pp rom version: e7ae62f[0m
+[0;32mI (706) net80211: net80211 rom version: e7ae62f[0m
+I (726) wifi:wifi driver task: 3fcc86d0, prio:23, stack:6656, core=0
+I (746) wifi:wifi firmware version: 48ea317a7
+I (746) wifi:wifi certification version: v7.0
+I (746) wifi:config NVS flash: enabled
+I (746) wifi:config nano formatting: disabled
+I (746) wifi:Init data frame dynamic rx buffer num: 32
+I (756) wifi:Init static rx mgmt buffer num: 5
+I (756) wifi:Init management short buffer num: 32
+I (756) wifi:Init dynamic tx buffer num: 32
+I (766) wifi:Init static tx FG buffer num: 2
+I (766) wifi:Init static rx buffer size: 2212
+I (776) wifi:Init static rx buffer num: 10
+I (776) wifi:Init dynamic rx buffer num: 32
+[0;32mI (776) wifi_init: rx ba win: 6[0m
+[0;32mI (786) wifi_init: accept mbox: 6[0m
+[0;32mI (786) wifi_init: tcpip mbox: 32[0m
+[0;32mI (796) wifi_init: udp mbox: 6[0m
+[0;32mI (796) wifi_init: tcp mbox: 6[0m
+[0;32mI (796) wifi_init: tcp tx win: 5760[0m
+[0;32mI (806) wifi_init: tcp rx win: 5760[0m
+[0;32mI (806) wifi_init: tcp mss: 1440[0m
+[0;32mI (816) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (816) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (846) chip[DL]: NVS set: chip-counters/reboot-count = 1 (0x1)[0m
+[0;32mI (846) chip[DL]: NVS set: chip-config/unique-id = "A554D5E833FF4088"[0m
+[0;32mI (846) chip[DL]: Real time clock set to 946684800 (0100/00/01 00:00:00 UTC)[0m
+[0;32mI (856) BLE_INIT: BT controller compile version [d752dea][0m
+[0;32mI (856) BLE_INIT: Bluetooth MAC: 02:00:00:00:00:02[0m
+[0;32mI (866) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (936) NimBLE: GAP procedure initiated: stop advertising.
+[0m
+[0;32mI (946) CHIP[DL]: BLE host-controller synced[0m
+[0;32mI (1446) chip[DL]: Starting ESP WiFi layer[0m
+I (1446) wifi:mode : sta (02:00:00:00:00:00)
+I (1446) wifi:enable tsf
+W (1446) wifi:Haven't to connect to a suitable AP now!
+[0;32mI (1446) chip[DL]: [0;32mI (1446) chip[DL]: Posting ESPSystemEvent: Wifi Event with eventId : 43Done driving station state, nothing else to do...[0m
+[0m
+W (1456) wifi:Haven't to connect to a suitable AP now!
+[0;32mI (1466) chip[DL]: Done driving station state, nothing else to do...[0m
+[0;32mI (1466) chip[DL]: [0;32mI (1476) chip[SVR]: Posting ESPSystemEvent: Wifi Event with eventId : 2Initializing subscription resumption storage...[0m
+[0m
+[0;32mI (1486) chip[SVR]: Server initializing...[0m
+[0;32mI (1496) chip[TS]: Last Known Good Time: [unknown][0m
+[0;32mI (1496) chip[TS]: Setting Last Known Good Time to firmware build time 2023-10-14T01:16:48[0m
+[0;32mI (1506) chip[DMG]: AccessControl: initializing[0m
+[0;32mI (1516) chip[DMG]: Examples::AccessControlDelegate::Init[0m
+[0;32mI (1516) chip[DMG]: AccessControl: setting[0m
+[0;32mI (1526) chip[DMG]: DefaultAclStorage: initializing[0m
+[0;32mI (1526) chip[DMG]: DefaultAclStorage: 0 entries loaded[0m
+[0;32mI (1536) chip[SVR]: WARNING: mTestEventTriggerDelegate is null[0m
+[0;32mI (1546) chip[ZCL]: Using ZAP configuration...[0m
+[0;32mI (1546) esp_matter_cluster: Cluster plugin init common callback[0m
+[0;32mI (1556) chip[DMG]: AccessControlCluster: initializing[0m
+[0;32mI (1556) chip[ZCL]: 0x3c13e434 ep 0 clus 0x0000_0030 attr 0x0000_0000 not supported[0m
+[0;32mI (1566) chip[ZCL]: Initiating Admin Commissioning cluster.[0m
+[0;32mI (1576) chip[DIS]: Updating services using commissioning mode 1[0m
+[0;32mI (1576) chip[DIS]: CHIP minimal mDNS started advertising.[0m
+[0;32mI (1586) chip[DIS]: Advertise commission parameter vendorID=65521 productID=32768 discriminator=3840/15 cm=1 cp=0[0m
+[0;32mI (1596) chip[DIS]: CHIP minimal mDNS configured as 'Commissionable node device'; instance name: 88CFB4BA52EDDC14.[0m
+[0;32mI (1606) chip[DIS]: mDNS service published: _matterc._udp[0m
+[0;32mI (1616) chip[IN]: CASE Server enabling CASE session setups[0m
+[0;32mI (1616) chip[SVR]: Joining Multicast groups[0m
+[0;32mI (1626) chip[SVR]: Server Listening...[0m
+[0;32mI (1626) esp_matter_core: Dynamic endpoint 0 added[0m
+[0;32mI (1636) esp_matter_core: Dynamic endpoint 1 added[0m
+[0;32mI (1636) esp_matter_core: Dynamic endpoint 2 added[0m
+[0;32mI (1646) esp_matter_core: Dynamic endpoint 3 added[0m
+[0;32mI (1656) esp_matter_core: Dynamic endpoint 4 added[0m
+[0;32mI (1656) chip[DL]: WIFI_EVENT_STA_START[0m
+[0;32mI (1656) esp_matter_core: Cannot find minimum unused endpoint_id, try to find in the previous namespace[0m
+W (1666) wifi:Haven't to connect to a suitable AP now!
+[0;32mI (1676) chip[DL]: [0;32mI (1676) esp_matter_core: Failed to open node namespace[0m
+Done driving station state, nothing else to do...[0m
+[0;32mI (1686) chip[DL]: Configuring CHIPoBLE advertising (interval 25 ms, connectable)[0m
+[0;32mI (1696) NimBLE: GAP procedure initiated: advertise; [0m
+[0;32mI (1706) NimBLE: disc_mode=2[0m
+[0;32mI (1706) NimBLE:  adv_channel_map=0 own_addr_type=1 adv_filter_policy=0 adv_itvl_min=40 adv_itvl_max=40[0m
+[0;32mI (1716) NimBLE: 
+[0m
+[0;32mI (1716) chip[DL]: CHIPoBLE advertising started[0m
+[0;32mI (1726) CT: HandleMatterEventCb(226)
+[0;36mCommissioning window opened[0m
+[0m
+[0;32mI (1736) CT: HandleMatterEventCb(285)
+[0;36mEvent[0x800d] Not implmentated![0m
+[0m
+[0;32mI (1746) CT: LateSetupAfterMatter(136)
+[0;36m[0m
+[0m
+[0;32mI (1746) CT: SetSupplyState(389)
+[0;36mSupplyState updated to 1[0m
+[0m
+[0;32mI (1756) CT: ReportAttributeChangeToMatter(637)
+[0;36mMatterManager::GetInstance()
+ ep-id:1, clu:153, attr:1[0m
+[0m
+[0;32mI (1766) CT: ComputeMaxChargeCurrentLimit(1206)
+[0;36mMaximumChargeCurrent updated to 32000[0m
+[0m
+[0;32mI (1776) CT: ReportAttributeChangeToMatter(637)
+[0;36mMatterManager::GetInstance()
+ ep-id:1, clu:153, attr:7[0m
+[0m
+[0;32mI (1786) CT: Init(93)
+[0;36mEVSE: Initializing EvseTargetsDelegate[0m
+[0m
+[0;32mI (1796) CT: LateSetupAfterMatter(148)
+[0;36mSet targets GetPersistentStorage[0m
+[0m
+[0;32mI (1806) CT: LateSetupAfterMatter(707)
+[0;36m[0m
+[0m
+[0;32mI (1806) CT: LateSetupAfterMatter(712)
+[0;36mPower Source Description: CT Matter EVSE (OK)[0m
+[0m
+[0;32mI (1816) CT: LateSetupAfterMatter(716)
+[0;36mPower Source WiredNominalVoltage: 230000 (OK)[0m
+[0m
+[0;32mI (1826) CT: LateSetupAfterMatter(720)
+[0;36mPower Source WiredMaximumCurrent: 32000 (OK)[0m
+[0m
+[0;32mI (1836) CT: LateSetupAfterMatter(96)
+[0;36m[0m
+[0m
+[0;32mI (1846) CT: LateSetupAfterMatter(107)
+[0;36mPower Source ActiveEndpoints: (OK)[0m
+[0m
+StartMatterStack
+[0;32mStart Matter SDK ... Done[0m
+[0;32mI (1856) CT: RestoreAndPrintTime(138)
+[0;36mDrift detected (836895373s). Restored NVS time: 1783580174[0m
+[0m
+[0;32mI (1866) CT: RestoreAndPrintTime(156)
+[0;36mPOSIX time successfully set to: 2026-07-09 06:56:14(1783580174)[0m
+[0m
+findNextStatus
+[0;32mCharger status changed:
+[0;33m[ UNAVAILABLE ] >>> [ AVAILABLE ][0m
+[0;32mI (1886) CT: SendEVNotDetectedEvent(1080)
+[0;36mSessionID is Null[0m
+[0m
+[0;32mI (1896) CT: handleStatus_Available(62)
+[0;36mMatter[Not Connected], EV is available[0m
+[0m
+app_main
+[0;32mInitializing Console Commands ...[0m
+[5n[6n [0;32mI (1956) main_task: Returned from app_main()[0m
+[999C [6n [115D[0;32m> [0m[0;32mI (7076) chip[DL]: BLE GAP connection established (con 1)[0m
+[0;32mI (7076) chip[DL]: CHIPoBLE advertising stopped[0m
+[0;32mI (7076) CT: HandleMatterEventCb(285)
+[0;36mEvent[0x800d] Not implmentated![0m
+[0m
+[0;32mI (8036) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (8036) chip[BLE]: local and remote recv window sizes = 5[0m
+[0;32mI (8036) chip[BLE]: selected BTP version 4[0m
+[0;32mI (8056) chip[BLE]: using BTP fragment sizes rx 244 / tx 244.[0m
+[0;32mI (8246) chip[DL]: Write request/command received for CHIPoBLE TX CCCD characteristic (con 1 ) indicate = 1[0m
+[0;32mI (8246) chip[DL]: CHIPoBLE subscribe received[0m
+[0;32mI (8246) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (8266) NimBLE: att_handle=18
+[0m
+[0;32mI (8266) CT: HandleMatterEventCb(285)
+[0;36mEvent[0x8006] Not implmentated![0m
+[0m
+[0;32mI (8306) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (8306) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (8326) chip[EM]: >>> [E:8649r S:0 M:19737054] (U) Msg RX from 0:F95D8168853CD77D [0000] to 0000000000000000 --- Type 0000:20 (SecureChannel:PBKDFParamRequest) (B:98)[0m
+[0;32mI (8336) chip[EM]: <<< [E:8649r S:0 M:90291321] (U) Msg TX from 0000000000000000 to 0:F95D8168853CD77D [0000] [BLE] --- Type 0000:21 (SecureChannel:PBKDFParamResponse) (B:154)[0m
+[0;32mI (8356) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (8356) NimBLE: att_handle=18
+[0m
+[0;32mI (8366) chip[SVR]: Commissioning session establishment step started[0m
+[0;32mI (8396) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (8426) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (8426) chip[EM]: >>> [E:8649r S:0 M:19737055] (U) Msg RX from 0:F95D8168853CD77D [0000] to 0000000000000000 --- Type 0000:22 (SecureChannel:PASE_Pake1) (B:92)[0m
+[0;32mI (9116) chip[EM]: <<< [E:8649r S:0 M:90291322] (U) Msg TX from 0000000000000000 to 0:F95D8168853CD77D [0000] [BLE] --- Type 0000:23 (SecureChannel:PASE_Pake2) (B:127)[0m
+[0;32mI (9126) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (9126) NimBLE: att_handle=18
+[0m
+[0;32mI (9176) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (9206) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (9206) chip[EM]: >>> [E:8649r S:0 M:19737056] (U) Msg RX from 0:F95D8168853CD77D [0000] to 0000000000000000 --- Type 0000:24 (SecureChannel:PASE_Pake3) (B:59)[0m
+[0;32mI (9226) chip[EM]: <<< [E:8649r S:0 M:90291323] (U) Msg TX from 0000000000000000 to 0:F95D8168853CD77D [0000] [BLE] --- Type 0000:40 (SecureChannel:StatusReport) (B:30)[0m
+[0;32mI (9236) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (9246) NimBLE: att_handle=18
+[0m
+[0;32mI (9256) chip[SC]: SecureSession[0x3fca6820, LSID:9984]: State change 'kEstablishing' --> 'kActive'[0m
+[0;32mI (9256) chip[SVR]: Commissioning completed session establishment step[0m
+[0;32mI (9266) chip[DIS]: Updating services using commissioning mode 0[0m
+[0;32mI (9276) chip[DIS]: CHIP minimal mDNS started advertising.[0m
+[0;32mI (9276) chip[SVR]: Device completed Rendezvous process[0m
+[0;32mI (9286) CT: HandleMatterEventCb(285)
+[0;36mEvent[0x8018] Not implmentated![0m
+[0m
+[0;32mI (9296) CT: HandleMatterEventCb(218)
+[0;36mCommissioning session started[0m
+[0m
+[0;32mI (9306) CT: HandleMatterEventCb(245)
+[0;36mCommissioning window closed[0m
+[0m
+[0;32mI (9296) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (9316) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (9336) chip[EM]: >>> [E:8650r S:9984 M:253870803] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:02 (IM:ReadRequest) (B:136)[0m
+[0;31mE (9346) chip[DMG]: Fail to retrieve data, roll back and encode status on clusterId: 0x0000_0030, attributeId: 0x0000_000Cerr = 586[0m
+[0;32mI (9356) chip[DL]: NVS set: chip-config/reg-location = 0 (0x0)[0m
+[0;32mI (9366) esp_matter_attribute: ********** R : Endpoint 0x0000's Cluster 0x00000030's Attribute 0x00000000 is 0 **********[0m
+[0;32mI (9386) chip[EM]: <<< [E:8650r S:9984 M:184727149] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [BLE] --- Type 0001:05 (IM:ReportData) (B:253)[0m
+[0;32mI (9396) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (9396) NimBLE: att_handle=18
+[0m
+[0;32mI (9476) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (9476) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (9486) NimBLE: att_handle=18
+[0m
+[0;32mI (9566) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (9566) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (9586) chip[EM]: >>> [E:8651r S:9984 M:253870804] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:02 (IM:ReadRequest) (B:112)[0m
+[0;31mE (9596) chip[DMG]: Fail to retrieve data, roll back and encode status on clusterId: 0x0000_0046, attributeId: 0x0000_0002err = 5c3[0m
+[0;31mE (9606) chip[DMG]: Fail to retrieve data, roll back and encode status on clusterId: 0x0000_0046, attributeId: 0x0000_0001err = 5c3[0m
+[0;31mE (9616) chip[DMG]: Fail to retrieve data, roll back and encode status on clusterId: 0x0000_0046, attributeId: 0x0000_0000err = 5c3[0m
+[0;31mE (9626) chip[DMG]: Fail to retrieve data, roll back and encode status on clusterId: 0x0000_0046, attributeId: 0x0000_0007err = 5c3[0m
+[0;31mE (9636) chip[DMG]: Fail to retrieve data, roll back and encode status on clusterId: 0x0000_0046, attributeId: 0x0000_0006err = 5c3[0m
+[0;32mI (9656) chip[EM]: <<< [E:8651r S:9984 M:184727150] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [BLE] --- Type 0001:05 (IM:ReportData) (B:208)[0m
+[0;32mI (9666) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (9686) NimBLE: att_handle=18
+[0m
+[0;32mI (9716) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (9716) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (9736) chip[EM]: >>> [E:8652r S:9984 M:253870805] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:08 (IM:InvokeCommandRequest) (B:65)[0m
+[0;32mI (9746) chip[FS]: GeneralCommissioning: Received ArmFailSafe (60s)[0m
+[0;32mI (9746) esp_matter_attribute: ********** R : Endpoint 0x0000's Cluster 0x00000030's Attribute 0x00000000 is 0 **********[0m
+[0;32mI (9766) esp_matter_attribute: ********** W : Endpoint 0x0000's Cluster 0x00000030's Attribute 0x00000000 is 3 **********[0m
+[0;32mI (9776) CT: app_attribute_update_cb(180)
+[0;36mReceived attribute update type: PRE UPDATE (0x0 0x30 0x0)[0m
+[0m
+[0;32mI (9786) CT: app_attribute_update_cb(180)
+[0;36mReceived attribute update type: POST UPDATE (0x0 0x30 0x0)[0m
+[0m
+[0;32mI (9806) chip[EM]: <<< [E:8652r S:9984 M:184727151] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [BLE] --- Type 0001:09 (IM:InvokeCommandResponse) (B:66)[0m
+[0;32mI (9816) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (9816) NimBLE: att_handle=18
+[0m
+[0;32mI (9866) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (9866) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (9886) chip[EM]: >>> [E:8653r S:9984 M:253870806] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:08 (IM:InvokeCommandRequest) (B:70)[0m
+[0;32mI (9896) chip[DL]: NVS set: chip-config/reg-location = 0 (0x0)[0m
+[0;32mI (9906) chip[DL]: NVS set: chip-config/country-code = "XX"[0m
+[0;32mI (9906) esp_matter_attribute: ********** R : Endpoint 0x0000's Cluster 0x00000030's Attribute 0x00000000 is 3 **********[0m
+[0;32mI (9916) esp_matter_attribute: ********** W : Endpoint 0x0000's Cluster 0x00000030's Attribute 0x00000000 is 4 **********[0m
+[0;32mI (9936) CT: app_attribute_update_cb(180)
+[0;36mReceived attribute update type: PRE UPDATE (0x0 0x30 0x0)[0m
+[0m
+[0;32mI (9946) CT: app_attribute_update_cb(180)
+[0;36mReceived attribute update type: POST UPDATE (0x0 0x30 0x0)[0m
+[0m
+[0;32mI (9956) chip[EM]: <<< [E:8653r S:9984 M:184727152] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [BLE] --- Type 0001:09 (IM:InvokeCommandResponse) (B:66)[0m
+[0;32mI (9976) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (9976) NimBLE: att_handle=18
+[0m
+[0;32mI (10016) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (10046) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (10046) chip[EM]: >>> [E:8654r S:9984 M:253870807] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:08 (IM:InvokeCommandRequest) (B:62)[0m
+[0;32mI (10066) esp_matter_command: Received command 0x00000002 for endpoint 0x0000's cluster 0x0000003E[0m
+[0;32mI (10076) chip[ZCL]: OpCreds: Certificate Chain request received for PAI[0m
+[0;32mI (10086) chip[EM]: <<< [E:8654r S:9984 M:184727153] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [BLE] --- Type 0001:09 (IM:InvokeCommandResponse) (B:527)[0m
+[0;32mI (10096) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (10106) NimBLE: att_handle=18
+[0m
+[0;32mI (10166) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (10166) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (10176) NimBLE: att_handle=18
+[0m
+[0;32mI (10226) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (10226) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (10236) NimBLE: att_handle=18
+[0m
+[0;32mI (10286) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (10286) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (10306) chip[EM]: >>> [E:8655r S:9984 M:253870808] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:08 (IM:InvokeCommandRequest) (B:62)[0m
+[0;32mI (10316) esp_matter_command: Received command 0x00000002 for endpoint 0x0000's cluster 0x0000003E[0m
+[0;32mI (10316) chip[ZCL]: OpCreds: Certificate Chain request received for DAC[0m
+[0;32mI (10336) chip[EM]: <<< [E:8655r S:9984 M:184727154] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [BLE] --- Type 0001:09 (IM:InvokeCommandResponse) (B:557)[0m
+[0;32mI (10346) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (10356) NimBLE: att_handle=18
+[0m
+[0;32mI (10436) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (10436) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (10446) NimBLE: att_handle=18
+[0m
+[0;32mI (10496) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (10496) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (10506) NimBLE: att_handle=18
+[0m
+[0;32mI (10556) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (10556) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (10576) chip[EM]: >>> [E:8656r S:9984 M:253870809] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:08 (IM:InvokeCommandRequest) (B:94)[0m
+[0;32mI (10586) esp_matter_command: Received command 0x00000000 for endpoint 0x0000's cluster 0x0000003E[0m
+[0;32mI (10586) chip[ZCL]: OpCreds: Received an AttestationRequest command[0m
+[0;32mI (10746) chip[ZCL]: OpCreds: AttestationRequest successful.[0m
+[0;32mI (10756) chip[EM]: <<< [E:8656r S:9984 M:184727155] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [BLE] --- Type 0001:09 (IM:InvokeCommandResponse) (B:714)[0m
+[0;32mI (10766) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (10766) NimBLE: att_handle=18
+[0m
+[0;32mI (10826) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (10826) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (10836) NimBLE: att_handle=18
+[0m
+[0;32mI (10886) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (10886) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (10896) NimBLE: att_handle=18
+[0m
+[0;32mI (10946) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (10976) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (10976) chip[EM]: >>> [E:8657r S:9984 M:253870810] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:08 (IM:InvokeCommandRequest) (B:94)[0m
+[0;32mI (10996) esp_matter_command: Received command 0x00000004 for endpoint 0x0000's cluster 0x0000003E[0m
+[0;32mI (11006) chip[ZCL]: OpCreds: Received a CSRRequest command[0m
+[0;32mI (11286) chip[ZCL]: OpCreds: AllocatePendingOperationalKey succeeded[0m
+[0;32mI (11426) chip[ZCL]: OpCreds: CSRRequest successful.[0m
+[0;32mI (11436) chip[EM]: <<< [E:8657r S:9984 M:184727156] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [BLE] --- Type 0001:09 (IM:InvokeCommandResponse) (B:373)[0m
+[0;32mI (11446) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (11446) NimBLE: att_handle=18
+[0m
+[0;32mI (11516) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (11516) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (11526) NimBLE: att_handle=18
+[0m
+[0;32mI (11576) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (11576) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (11636) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (11646) chip[EM]: >>> [E:8658r S:9984 M:253870811] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:08 (IM:InvokeCommandRequest) (B:293)[0m
+[0;32mI (11656) esp_matter_command: Received command 0x0000000B for endpoint 0x0000's cluster 0x0000003E[0m
+[0;32mI (11666) chip[ZCL]: OpCreds: Received an AddTrustedRootCertificate command[0m
+[0;32mI (11946) chip[ZCL]: OpCreds: AddTrustedRootCertificate successful.[0m
+[0;32mI (11956) chip[EM]: <<< [E:8658r S:9984 M:184727157] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [BLE] --- Type 0001:09 (IM:InvokeCommandResponse) (B:63)[0m
+[0;32mI (11966) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (11966) NimBLE: att_handle=18
+[0m
+[0;32mI (12026) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (12026) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (12116) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (12206) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (12216) chip[EM]: >>> [E:8659r S:9984 M:253870812] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:08 (IM:InvokeCommandRequest) (B:567)[0m
+[0;32mI (12226) esp_matter_command: Received command 0x00000006 for endpoint 0x0000's cluster 0x0000003E[0m
+[0;32mI (12226) chip[ZCL]: OpCreds: Received an AddNOC command[0m
+[0;32mI (12246) chip[FP]: Validating NOC chain[0m
+[0;32mI (12786) chip[FP]: NOC chain validation successful[0m
+[0;32mI (12786) chip[FP]: Added new fabric at index: 0x1[0m
+[0;32mI (12786) chip[FP]: Assigned compressed fabric ID: 0x0EA99A5EDC78EB1E, node ID: 0x0000000000007283[0m
+[0;32mI (12806) chip[TS]: Last Known Good Time: 2023-10-14T01:16:48[0m
+[0;32mI (12816) chip[TS]: New proposed Last Known Good Time: 2021-01-01T00:00:00[0m
+[0;32mI (12816) chip[TS]: Retaining current Last Known Good Time[0m
+[0;32mI (12836) chip[ZCL]: OpCreds: ACL entry created for Fabric index 0x1 CASE Admin Subject 0x000000000001B669[0m
+[0;32mI (12836) chip[DIS]: Advertise operational node 0EA99A5EDC78EB1E-0000000000007283[0m
+[0;32mI (12846) chip[DIS]: CHIP minimal mDNS configured as 'Operational device'; instance name: 0EA99A5EDC78EB1E-0000000000007283.[0m
+[0;32mI (12866) chip[DIS]: mDNS service published: _matter._tcp[0m
+[0;32mI (12866) chip[ZCL]: OpCreds: successfully created fabric index 0x1 via AddNOC[0m
+[0;32mI (12876) chip[EM]: <<< [E:8659r S:9984 M:184727158] (S) Msg TX from 0000000000000000 to 1:FFFFFFFB00000000 [EB1E] [BLE] --- Type 0001:09 (IM:InvokeCommandResponse) (B:66)[0m
+[0;32mI (12896) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (12896) NimBLE: att_handle=18
+[0m
+[0;32mI (12906) CT: HandleMatterEventCb(267)
+[0;36mFabric is updated[0m
+[0m
+[0;32mI (12956) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (12956) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (12976) chip[EM]: >>> [E:8660r S:9984 M:253870813] (S) Msg RX from 1:FFFFFFFB00000000 [EB1E] to 0000000000000000 --- Type 0001:08 (IM:InvokeCommandRequest) (B:92)[0m
+[0;32mI (12996) esp_matter_attribute: ********** R : Endpoint 0x0000's Cluster 0x00000030's Attribute 0x00000000 is 4 **********[0m
+[0;32mI (12996) esp_matter_attribute: ********** W : Endpoint 0x0000's Cluster 0x00000030's Attribute 0x00000000 is 23 **********[0m
+[0;32mI (13006) CT: app_attribute_update_cb(180)
+[0;36mReceived attribute update type: PRE UPDATE (0x0 0x30 0x0)[0m
+[0m
+[0;32mI (13016) CT: app_attribute_update_cb(180)
+[0;36mReceived attribute update type: POST UPDATE (0x0 0x30 0x0)[0m
+[0m
+[0;32mI (13036) chip[EM]: <<< [E:8660r S:9984 M:184727159] (S) Msg TX from 0000000000000000 to 1:FFFFFFFB00000000 [EB1E] [BLE] --- Type 0001:09 (IM:InvokeCommandResponse) (B:66)[0m
+[0;32mI (13046) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (13056) NimBLE: att_handle=18
+[0m
+[0;32mI (13106) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (13106) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (13126) chip[EM]: >>> [E:8661r S:9984 M:253870814] (S) Msg RX from 1:FFFFFFFB00000000 [EB1E] to 0000000000000000 --- Type 0001:08 (IM:InvokeCommandRequest) (B:65)[0m
+[0;32mI (13136) chip[FS]: GeneralCommissioning: Received ArmFailSafe (73s)[0m
+[0;32mI (13136) esp_matter_attribute: ********** R : Endpoint 0x0000's Cluster 0x00000030's Attribute 0x00000000 is 23 **********[0m
+[0;32mI (13156) esp_matter_attribute: ********** W : Endpoint 0x0000's Cluster 0x00000030's Attribute 0x00000000 is 25 **********[0m
+[0;32mI (13166) CT: app_attribute_update_cb(180)
+[0;36mReceived attribute update type: PRE UPDATE (0x0 0x30 0x0)[0m
+[0m
+[0;32mI (13176) CT: app_attribute_update_cb(180)
+[0;36mReceived attribute update type: POST UPDATE (0x0 0x30 0x0)[0m
+[0m
+[0;32mI (13196) chip[EM]: <<< [E:8661r S:9984 M:184727160] (S) Msg TX from 0000000000000000 to 1:FFFFFFFB00000000 [EB1E] [BLE] --- Type 0001:09 (IM:InvokeCommandResponse) (B:66)[0m
+[0;32mI (13206) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (13206) NimBLE: att_handle=18
+[0m
+[0;32mI (13256) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (13256) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (13276) chip[EM]: >>> [E:8662r S:9984 M:253870815] (S) Msg RX from 1:FFFFFFFB00000000 [EB1E] to 0000000000000000 --- Type 0001:08 (IM:InvokeCommandRequest) (B:80)[0m
+[0;32mI (13286) chip[NP]: ESP NetworkCommissioningDelegate: SSID: EXAMPLE_SSID [0m
+W (13296) wifi:Haven't to connect to a suitable AP now!
+[0;32mI (13296) chip[DL]: WiFi station mode change: Enabled -> Disabled[0m
+W (13306) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2
+[0;32mI (13456) chip[DL]: WiFi station mode change: Disabled -> Enabled[0m
+W (13456) wifi:Haven't to connect to a suitable AP now!
+[0;32mI (13456) chip[DL]: Attempting to connect WiFi station interface[0m
+[0;32mI (13466) chip[DL]: WiFi station state change: NotConnected -> Connecting[0m
+W (13476) wifi:Haven't to connect to a suitable AP now!
+[0;31mE (13486) chip[DL]: Failed to get configured network when updating network status: Error ESP32:0x0500300F[0m
+[0;32mI (13486) chip[DL]: Done driving station state, nothing else to do...[0m
+W (13496) wifi:Haven't to connect to a suitable AP now!
+[0;32mI (13496) chip[DL]: Attempting to connect WiFi station interface[0m
+E (13506) wifi:sta is connecting, return error
+[0;31mE (13516) chip[DL]: esp_wifi_connect() failed: ESP_ERR_WIFI_CONN[0m
+W (13516) wifi:Haven't to connect to a suitable AP now!
+[0;32mI (13526) chip[DL]: Attempting to connect WiFi station interface[0m
+E (13526) wifi:sta is connecting, return error
+[0;31mE (13536) chip[DL]: esp_wifi_connect() failed: ESP_ERR_WIFI_CONN[0m
+I (14476) wifi:new:<3,0>, old:<1,0>, ap:<255,255>, sta:<3,0>, prof:1, snd_ch_cfg:0x0
+I (14476) wifi:state: init -> auth (0xb0)
+[0;32mI (14476) chip[DL]: Posting ESPSystemEvent: Wifi Event with eventId : 43[0m
+I (14486) wifi:state: auth -> assoc (0x0)
+I (14506) wifi:state: assoc -> run (0x10)
+I (14666) wifi:connected with EXAMPLE_SSID , aid = 3, channel 3, BW20, bssid = 02:00:00:00:00:aa
+I (14666) wifi:security: WPA2-PSK, phy: bgn, rssi: -32
+I (14696) wifi:pm start, type: 1
+
+I (14696) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (14696) wifi:set rx beacon pti, rx_bcn_pti: 14, bcn_timeout: 25000, mt_pti: 14, mt_time: 10000
+[0;32mI (14716) chip[DL]: Posting ESPSystemEvent: Wifi Event with eventId : 4[0m
+[0;32mI (14716) chip[DL]: WIFI_EVENT_STA_CONNECTED[0m
+[0;32mI (14726) chip[DL]: WiFi station state change: Connecting -> Connecting_Succeeded[0m
+[0;32mI (14726) chip[DL]: WiFi station state change: Connecting_Succeeded -> Connected[0m
+[0;32mI (14736) chip[DL]: WiFi station interface connected[0m
+[0;32mI (14746) esp_matter_attribute: ********** R : Endpoint 0x0000's Cluster 0x00000030's Attribute 0x00000000 is 25 **********[0m
+[0;32mI (14756) esp_matter_attribute: ********** W : Endpoint 0x0000's Cluster 0x00000030's Attribute 0x00000000 is 27 **********[0m
+[0;32mI (14766) CT: app_attribute_update_cb(180)
+[0;36mReceived attribute update type: PRE UPDATE (0x0 0x30 0x0)[0m
+[0m
+[0;32mI (14776) CT: app_attribute_update_cb(180)
+[0;36mReceived attribute update type: POST UPDATE (0x0 0x30 0x0)[0m
+[0m
+[0;32mI (14796) chip[EM]: <<< [E:8662r S:9984 M:184727161] (S) Msg TX from 0000000000000000 to 1:FFFFFFFB00000000 [EB1E] [BLE] --- Type 0001:09 (IM:InvokeCommandResponse) (B:65)[0m
+[0;32mI (14806) NimBLE: GATT procedure initiated: indicate; [0m
+[0;32mI (14806) NimBLE: att_handle=18
+[0m
+[0;32mI (14826) chip[DL]: Done driving station state, nothing else to do...[0m
+[0;32mI (14826) chip[DIS]: Advertise operational node 0EA99A5EDC78EB1E-0000000000007283[0m
+[0;32mI (14836) chip[DIS]: CHIP minimal mDNS configured as 'Operational device'; instance name: 0EA99A5EDC78EB1E-0000000000007283.[0m
+[0;32mI (14836) chip[DIS]: mDNS service published: _matter._tcp[0m
+[0;32mI (14846) chip[SVR]: Operational advertising enabled[0m
+[0;32mI (14846) CT: HandleMatterEventCb(285)
+[0;36mEvent[0x8011] Not implmentated![0m
+[0m
+[0;32mI (14866) chip[DL]: Updating advertising data[0m
+[0;32mI (14866) CT: HandleMatterEventCb(285)
+[0;36mEvent[0x8000] Not implmentated![0m
+[0m
+I (14746) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+I (14896) wifi:<ba-add>idx:0 (ifx:0, 02:00:00:00:00:aa), tid:0, ssn:2, winSize:64
+[0;32mI (14936) chip[DL]: Confirm received for CHIPoBLE TX characteristic indication (con 1) status= 14 [0m
+[0;32mI (16456) esp_netif_handlers: sta ip: 192.168.1.112, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (16456) chip[DL]: Posting ESPSystemEvent: IP Event with eventId : 0[0m
+[0;32mI (16466) chip[DL]: IP_EVENT_STA_GOT_IP[0m
+[0;32mI (16466) chip[DL]: IPv4 address changed on WiFi station interface: 192.168.1.112/255.255.255.0 gateway 192.168.1.1[0m
+[0;32mI (16476) chip[DL]: IPv4 Internet connectivity ESTABLISHED[0m
+[0;32mI (16476) CT: HandleMatterEventCb(280)
+[0;36mIP_EVENT_STA_GOT_IP[0m
+[0m
+[0;32mI (16496) CT: Init(140)
+[0;36mInitializing SNTP. Using the SNTP server: pool.ntp.org[0m
+[0m
+[0;32mI (16506) CT: HandleMatterEventCb(285)
+[0;36mEvent[0x8002] Not implmentated![0m
+[0m
+[0;32mI (16506) CT: HandleMatterEventCb(203)
+[0;36mInterface IP Address changed[0m
+[0m
+[0;32mI (16516) chip[DIS]: Updating services using commissioning mode 0[0m
+[0;32mI (16516) chip[DIS]: CHIP minimal mDNS started advertising.[0m
+[0;32mI (16536) chip[DIS]: Advertise operational node 0EA99A5EDC78EB1E-0000000000007283[0m
+[0;32mI (16536) chip[DIS]: CHIP minimal mDNS configured as 'Operational device'; instance name: 0EA99A5EDC78EB1E-0000000000007283.[0m
+[0;32mI (16556) chip[DIS]: mDNS service published: _matter._tcp[0m
+[0;32mI (16706) chip[DL]: Posting ESPSystemEvent: IP Event with eventId : 3[0m
+[0;32mI (16706) chip[DL]: IP_EVENT_GOT_IP6[0m
+[0;32mI (16706) chip[DL]: IPv6 addr available. Ready on WIFI_STA_DEF interface: fe80:0000:0000:0000:0000:00ff:fe00:0000[0m
+[0;32mI (16716) CT: HandleMatterEventCb(203)
+[0;36mInterface IP Address changed[0m
+[0m
+[0;32mI (16726) chip[DIS]: Updating services using commissioning mode 0[0m
+[0;32mI (16736) chip[DIS]: CHIP minimal mDNS started advertising.[0m
+[0;32mI (16746) chip[DIS]: Advertise operational node 0EA99A5EDC78EB1E-0000000000007283[0m
+[0;32mI (16746) chip[DIS]: CHIP minimal mDNS configured as 'Operational device'; instance name: 0EA99A5EDC78EB1E-0000000000007283.[0m
+[0;32mI (16766) chip[DIS]: mDNS service published: _matter._tcp[0m
+[0;32mI (16766) chip[SVR]: Server initialization complete[0m
+[0;32mI (16776) chip[DIS]: Updating services using commissioning mode 0[0m
+[0;32mI (16776) chip[DIS]: CHIP minimal mDNS started advertising.[0m
+[0;32mI (16796) chip[DIS]: Advertise operational node 0EA99A5EDC78EB1E-0000000000007283[0m
+[0;32mI (16796) chip[DIS]: CHIP minimal mDNS configured as 'Operational device'; instance name: 0EA99A5EDC78EB1E-0000000000007283.[0m
+[0;32mI (16816) chip[DIS]: mDNS service published: _matter._tcp[0m
+[0;32mI (16816) CT: HandleMatterEventCb(285)
+[0;36mEvent[0x8012] Not implmentated![0m
+[0m
+[0;32mI (16836) chip[SWU]: Stopping the watchdog timer[0m
+[0;32mI (16836) chip[SWU]: Starting the periodic query timer, timeout: 86400 seconds[0m
+[0;32mI (16836) chip[IM]: No subscriptions to resume[0m
+[0;32mI (16846) CT: HandleMatterEventCb(285)
+[0;36mEvent[0x8016] Not implmentated![0m
+[0m
+[0;32mI (16856) esp_matter_attribute: ********** R : Endpoint 0x0000's Cluster 0x0000002A's Attribute 0x00000002 is 0 **********[0m
+[0;32mI (16866) esp_matter_attribute: ********** R : Endpoint 0x0000's Cluster 0x0000002A's Attribute 0x00000002 is 0 **********[0m
+[0;32mI (16876) esp_matter_attribute: ********** W : Endpoint 0x0000's Cluster 0x0000002A's Attribute 0x00000002 is 1 **********[0m
+[0;32mI (16886) CT: app_attribute_update_cb(180)
+[0;36mReceived attribute update type: PRE UPDATE (0x0 0x2A 0x2)[0m
+[0m
+[0;32mI (16906) CT: app_attribute_update_cb(180)
+[0;36mReceived attribute update type: POST UPDATE (0x0 0x2A 0x2)[0m
+[0m
+[0;32mI (16916) esp_matter_attribute: ********** R : Endpoint 0x0000's Cluster 0x0000002A's Attribute 0x00000003 is null **********[0m
+[0;32mI (17236) chip[EM]: >>> [E:8663r S:0 M:19737057] (U) Msg RX from 0:E1B0609A7CA039CB [0000] to 0000000000000000 --- Type 0000:30 (SecureChannel:CASE_Sigma1) (B:196)[0m
+[0;32mI (17256) chip[IN]: CASE Server received Sigma1 message . Starting handshake. EC 0x3fca8250[0m
+[0;32mI (17256) chip[EM]: <<< [E:8663r S:0 M:90291324 (Ack:19737057)] (U) Msg TX from 0000000000000000 to 0:E1B0609A7CA039CB [0000] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:26)[0m
+[0;32mI (17276) chip[SC]: Received Sigma1 msg[0m
+[0;32mI (17286) chip[SC]: CASE matched destination ID: fabricIndex 1, NodeID 0x0000000000007283[0m
+[0;32mI (17396) CHIP[DL]: Write request received for CHIPoBLE RX characteristic con 1 16[0m
+[0;32mI (17706) chip[EM]: <<< [E:8663r S:0 M:90291325 (Ack:19737057)] (U) Msg TX from 0000000000000000 to 0:E1B0609A7CA039CB [0000] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0000:31 (SecureChannel:CASE_Sigma2) (B:752)[0m
+[0;32mI (17716) chip[EM]: ??1 [E:8663r S:0 M:90291325] (U) Msg Retransmission to 0:0000000000000000 in 397ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (17736) chip[SC]: Sent Sigma2 msg[0m
+[0;32mI (17816) chip[EM]: >>> [E:8663r S:0 M:19737058 (Ack:90291325)] (U) Msg RX from 0:E1B0609A7CA039CB [0000] to 0000000000000000 --- Type 0000:32 (SecureChannel:CASE_Sigma3) (B:598)[0m
+[0;32mI (17836) chip[EM]: <<< [E:8663r S:0 M:90291326 (Ack:19737058)] (U) Msg TX from 0000000000000000 to 0:E1B0609A7CA039CB [0000] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:26)[0m
+[0;32mI (17846) chip[SC]: Received Sigma3 msg[0m
+[0;31mE (18676) chip[DL]: Long dispatch time: 820 ms, for event type 2[0m
+[0;32mI (18686) chip[EM]: <<< [E:8663r S:0 M:90291327 (Ack:19737058)] (U) Msg TX from 0000000000000000 to 0:E1B0609A7CA039CB [0000] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0000:40 (SecureChannel:StatusReport) (B:34)[0m
+[0;32mI (18696) chip[EM]: ??1 [E:8663r S:0 M:90291327] (U) Msg Retransmission to 0:0000000000000000 in 348ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (18716) chip[SC]: SecureSession[0x3fca68f8, LSID:9985]: State change 'kEstablishing' --> 'kActive'[0m
+[0;32mI (18726) chip[IN]: CASE Session established to peer: <000000000001B669, 1>[0m
+[0;32mI (18726) CT: HandleMatterEventCb(285)
+[0;36mEvent[0x8018] Not implmentated![0m
+[0m
+[0;32mI (18766) chip[EM]: >>> [E:8664r S:9985 M:53323038] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0001:08 (IM:InvokeCommandRequest) (B:59)[0m
+[0;32mI (18776) chip[FS]: GeneralCommissioning: Received CommissioningComplete[0m
+[0;32mI (18786) chip[FP]: Metadata for Fabric 0x1 persisted to storage.[0m
+[0;32mI (18846) chip[TS]: Committing Last Known Good Time to storage: 2023-10-14T01:16:48[0m
+[0;32mI (18856) chip[ZCL]: OpCreds: Fabric index 0x1 was committed to storage. Compressed Fabric Id 0x0EA99A5EDC78EB1E, FabricId 0000000000000001, NodeId 0000000000007283, VendorId 0xFFF1[0m
+[0;32mI (18886) chip[FS]: GeneralCommissioning: Successfully committed pending fabric data[0m
+[0;32mI (18886) chip[FS]: Fail-safe cleanly disarmed[0m
+[0;32mI (18886) esp_matter_attribute: ********** R : Endpoint 0x0000's Cluster 0x00000030's Attribute 0x00000000 is 27 **********[0m
+[0;32mI (18896) esp_matter_attribute: ********** W : Endpoint 0x0000's Cluster 0x00000030's Attribute 0x00000000 is 0 **********[0m
+[0;32mI (18916) CT: app_attribute_update_cb(180)
+[0;36mReceived attribute update type: PRE UPDATE (0x0 0x30 0x0)[0m
+[0m
+[0;32mI (18926) CT: app_attribute_update_cb(180)
+[0;36mReceived attribute update type: POST UPDATE (0x0 0x30 0x0)[0m
+[0m
+[0;32mI (18946) chip[EM]: <<< [E:8664r S:9985 M:130904641 (Ack:53323038)] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0001:09 (IM:InvokeCommandResponse) (B:70)[0m
+[0;32mI (18956) chip[EM]: ??1 [E:8664r S:9985 M:130904641] (S) Msg Retransmission to 1:000000000001B669 in 410ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (18976) chip[EM]: >>> [E:8663r S:0 M:19737059 (Ack:90291327)] (U) Msg RX from 0:E1B0609A7CA039CB [0000] to 0000000000000000 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:26)[0m
+[0;32mI (18986) CT: HandleMatterEventCb(271)
+[0;36mFabric is committed[0m
+[0m
+[0;32mI (18996) chip[SWU]: Device commissioned, schedule a default provider query[0m
+[0;32mI (19006) chip[SVR]: Commissioning completed successfully[0m
+[0;32mI (19016) chip[DIS]: Updating services using commissioning mode 0[0m
+[0;32mI (19016) chip[DIS]: CHIP minimal mDNS started advertising.[0m
+[0;32mI (19036) chip[DIS]: Advertise operational node 0EA99A5EDC78EB1E-0000000000007283[0m
+[0;32mI (19036) chip[DIS]: CHIP minimal mDNS configured as 'Operational device'; instance name: 0EA99A5EDC78EB1E-0000000000007283.[0m
+[0;32mI (19056) chip[DIS]: mDNS service published: _matter._tcp[0m
+[0;32mI (19056) chip[SC]: SecureSession[0x3fca6820, LSID:9984]: State change 'kActive' --> 'kPendingEviction'[0m
+[0;32mI (19066) chip[BLE]: Releasing end point's BLE connection back to application.[0m
+[0;32mI (19066) chip[DL]: Closing BLE GATT connection (con 1)[0m
+[0;32mI (19086) NimBLE: GAP procedure initiated: terminate connection; conn_handle=1 hci_reason=19
+[0m
+[0;32mI (19076) chip[DL]: [0;32mI (19086) CT: HandleMatterEventCb(208)
+[0;36mCommissioning complete[0m
+[0m
+[0;32mI (19096) esp_matter_core: Commissioning Complete[0m
+Write request/command received for CHIPoBLE TX CCCD characteristic (con 1 ) indicate = 0[0m
+[0;32mI (19106) chip[DL]: CHIPoBLE unsubscribe received[0m
+[0;32mI (19136) chip[DL]: BLE GAP connection terminated (con 1 reason 0x213)[0m
+[0;32mI (19146) CT: HandleMatterEventCb(245)
+[0;36mCommissioning window closed[0m
+[0m
+[0;32mI (19146) chip[EM]: >>> [E:8664r S:9985 M:53323039 (Ack:130904641)] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+[0;32mI (19166) NimBLE: GAP procedure initiated: stop advertising.
+[0m
+[0;32mI (19176) chip[DL]: BLE deinit successful and memory reclaimed[0m
+[0;32mI (19176) CT: HandleMatterEventCb(285)
+[0;36mEvent[0x8007] Not implmentated![0m
+[0m
+[0;32mI (19186) esp_matter_core: BLE Disconnected[0m
+[0;32mI (19186) CT: HandleMatterEventCb(285)
+[0;36mEvent[0x8017] Not implmentated![0m
+[0m
+[0;32mI (20726) CT: PrintCurrentTime(80)
+[0;36mThe current time is: 2026-07-09T07:00:10+0000, DST: No.[0m
+[0m
+[0;32mI (20736) CT: TimeSyncCallback(110)
+[0;36mTime synced and saved to NVS: 1783580410[0m
+[0m
+TimeSyncCallback
+[0;32mSNTP Time Synchronized![0m
+
+[0K[0;32m> [0mh
+[3C
+[0K[0;32m> [0mhw
+[4C
+[0K[0;32m> [0mhw 
+[5C
+[0K[0;32m> [0mhw c
+[6C
+[0K[0;32m> [0mhw ca
+[7C
+[0K[0;32m> [0mhw cab
+[8C
+[0K[0;32m> [0mhw cabl
+[9C
+[0K[0;32m> [0mhw cable
+[10C
+[0K[0;32m> [0mhw cable 
+[11C
+[0K[0;32m> [0mhw cable 1
+[12C[0;32mI (31646) ROUTE_HOOK: Ignore invalid ICMP packet[0m
+[0;32mI (31646) ROUTE_HOOK: Ignore invalid ICMP packet[0m
+[0;32mI (31646) ROUTE_HOOK: Ignore invalid ICMP packet[0m
+
+
+
+[0;32mI (31696) CT: setCableStatus(169)
+[0;36memulator: cable status = CONNECTED[0m
+[0m
+Done
+
+[6n [999C [6n [115D[0;32m> [0mfindNextChargerStatus
+[0;32mEV is detected, checking authorization...[0m
+findNextStatus
+[0;32mCharger status changed:
+[0;33m[ AVAILABLE ] >>> [ PREPARING ][0m
+[0;32mI (31736) CT: SendEVConnectedEvent(1061)
+[0;36mSessionID is Null[0m
+[0m
+[0;32mI (31746) CT: SetState(365)
+[0;36mState updated to 1[0m
+[0m
+[0;32mI (31746) CT: ApplicationCallbackHandler(839)
+[0;36mEVSE callback - state changed[0m
+[0m
+[0;32mI (31756) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580421[0m
+[0m
+[0;32mI (31766) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895621[0m
+[0m
+[0;32mI (31766) CT: ComputeChargingSchedule(1386)
+[0;36m--- ComputeChargingSchedule Start ---[0m
+[0m
+[0;32mI (31786) CT: ComputeChargingSchedule(1387)
+[0;36mCurrent System Time: [09/07/2026 07:00][0m
+[0m
+[0;32mI (31796) CT: ComputeChargingSchedule(1388)
+[0;36mCurrent Day: Thursday (0x10)[0m
+[0m
+[0;32mI (31806) CT: ComputeChargingSchedule(1389)
+[0;36mMinutes Past Midnight: 420[0m
+[0m
+[0;32mI (31806) CT: SearchNextChargeTargetAcrossDays(1275)
+[0;36mSearching for target on Thursday (searchDay=0)[0m
+[0m
+[0;32mI (31816) CT: SearchNextChargeTargetAcrossDays(1282)
+[0;36mNo more targets found for Thursday[0m
+[0m
+[0;32mI (31836) CT: SearchNextChargeTargetAcrossDays(1275)
+[0;36mSearching for target on Friday (searchDay=1)[0m
+[0m
+[0;32mI (31846) CT: SearchNextChargeTargetAcrossDays(1282)
+[0;36mNo more targets found for Friday[0m
+[0m
+[0;32mI (31856) CT: ComputeChargingSchedule(1425)
+[0;36mComputeChargingSchedule: No target found or error occurred (err=Error CHIP:0x000000D8)[0m
+[0m
+[0;32mI (31866) CT: ComputeChargingSchedule(1441)
+[0;36mCharge Profile Summary: Start=[NOT SET], Target=[NOT SET], SoC=0%, Energy=0mWh[0m
+[0m
+[0;32mI (31886) CT: handleStatus_Preparing(67)
+[0;36mEV is detected, waiting for authorization...[0m
+[0m
+[0;32mI (31886) CT: startAuthRequest(246)
+[0;36mNo Authorization[0m
+[0m
+[0;32mI (31896) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+findNextStatus
+[0;32mCharger status changed:
+[0;33m[ PREPARING ] >>> [ CHARGING ][0m
+[0;32mI (32106) CT: stopAuthRequest(277)
+[0;36mNo Authorization[0m
+[0m
+[0;31mE (32126) chip[SVR]: SessionID is Null[0m
+[0;32mI (32126) CT: SetState(365)
+[0;36mState updated to 3[0m
+[0m
+[0;32mI (32126) CT: ApplicationCallbackHandler(839)
+[0;36mEVSE callback - state changed[0m
+[0m
+[0;32mI (32136) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580422[0m
+[0m
+[0;32mI (32146) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895622[0m
+[0m
+[0;32mI (32146) CT: ComputeChargingSchedule(1386)
+[0;36m--- ComputeChargingSchedule Start ---[0m
+[0m
+[0;32mI (32166) CT: ComputeChargingSchedule(1387)
+[0;36mCurrent System Time: [09/07/2026 07:00][0m
+[0m
+[0;32mI (32176) CT: ComputeChargingSchedule(1388)
+[0;36mCurrent Day: Thursday (0x10)[0m
+[0m
+[0;32mI (32176) CT: ComputeChargingSchedule(1389)
+[0;36mMinutes Past Midnight: 420[0m
+[0m
+[0;32mI (32186) CT: SearchNextChargeTargetAcrossDays(1275)
+[0;36mSearching for target on Thursday (searchDay=0)[0m
+[0m
+[0;32mI (32206) CT: SearchNextChargeTargetAcrossDays(1282)
+[0;36mNo more targets found for Thursday[0m
+[0m
+[0;32mI (32216) CT: SearchNextChargeTargetAcrossDays(1275)
+[0;36mSearching for target on Friday (searchDay=1)[0m
+[0m
+[0;32mI (32226) CT: SearchNextChargeTargetAcrossDays(1282)
+[0;36mNo more targets found for Friday[0m
+[0m
+[0;32mI (32226) CT: ComputeChargingSchedule(1425)
+[0;36mComputeChargingSchedule: No target found or error occurred (err=Error CHIP:0x000000D8)[0m
+[0m
+[0;32mI (32236) CT: ComputeChargingSchedule(1441)
+[0;36mCharge Profile Summary: Start=[NOT SET], Target=[NOT SET], SoC=0%, Energy=0mWh[0m
+[0m
+[0;32mI (32256) CT: handleStatus_Finishing(120)
+[0;36mFinishing - Time Diff: 0 sec, Energy Delivered: 0 Wh[0m
+[0m
+[0;32mI (32266) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580422[0m
+[0m
+[0;32mI (32276) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895622[0m
+[0m
+[0;32mI (32286) CT: StartSession(769)
+[0;36mstarting session at time 836895622, charging meter 0[0m
+[0m
+[0;32mI (32286) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 0.00 sec[0m
+[0m
+[0;32mI (32306) CT: UpdateEnergyCharged(822)
+[0;36m0 - 0[0m
+[0m
+[0;32mI (32306) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580422[0m
+[0m
+[0;32mI (32316) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895622[0m
+[0m
+[0;32mI (32326) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 0, mSessionEnergyCharged 0[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		1
+	Start (monotonic us):	31750071
+	Time Elapsed:		0.00 sec
+	Energy Delivered:	0.00 Wh
+	Current:		0.0 A
+	Voltage:		0.0 V[0m
+[0;32mI (32356) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (32366) CT: startAuthRequest(246)
+[0;36mNo Authorization[0m
+[0m
+[0;32mI (32566) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 0.00 sec[0m
+[0m
+[0;32mI (32766) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 0.00 sec[0m
+[0m
+[0;32mI (32976) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 0.00 sec[0m
+[0m
+[0;32mI (33176) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 0.00 sec[0m
+[0m
+[0;32mI (33376) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 1.00 sec[0m
+[0m
+[0;32mI (33386) CT: UpdateEnergyCharged(822)
+[0;36m2 - 0[0m
+[0m
+[0;32mI (33396) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580423[0m
+[0m
+[0;32mI (33396) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895623[0m
+[0m
+[0;32mI (33406) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 1, mSessionEnergyCharged 2[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		1
+	Start (monotonic us):	31750071
+	Time Elapsed:		1.00 sec
+	Energy Delivered:	0.00 Wh
+	Current:		32.5 A
+	Voltage:		230.0 V[0m
+[0;32mI (33436) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (33646) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 1.00 sec[0m
+[0m
+[0;32mI (33846) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 1.00 sec[0m
+[0m
+[0;32mI (34056) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 1.00 sec[0m
+[0m
+[0;32mI (34256) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 1.00 sec[0m
+[0m
+[0;32mI (34456) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 2.00 sec[0m
+[0m
+[0;32mI (34456) CT: UpdateEnergyCharged(822)
+[0;36m4 - 0[0m
+[0m
+[0;32mI (34466) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580424[0m
+[0m
+[0;32mI (34476) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895624[0m
+[0m
+[0;32mI (34486) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 2, mSessionEnergyCharged 4[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		1
+	Start (monotonic us):	31750071
+	Time Elapsed:		2.00 sec
+	Energy Delivered:	0.00 Wh
+	Current:		32.1 A
+	Voltage:		230.0 V[0m
+[0;32mI (34506) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (34726) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 2.00 sec[0m
+[0m
+[0;32mI (34926) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 2.00 sec[0m
+[0m
+[0;32mI (35126) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 2.00 sec[0m
+[0m
+[0;32mI (35326) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 3.00 sec[0m
+[0m
+[0;32mI (35536) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 3.00 sec[0m
+[0m
+[0;32mI (35536) CT: UpdateEnergyCharged(822)
+[0;36m6 - 0[0m
+[0m
+[0;32mI (35536) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580425[0m
+[0m
+[0;32mI (35546) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895625[0m
+[0m
+[0;32mI (35556) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 3, mSessionEnergyCharged 6[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		1
+	Start (monotonic us):	31750071
+	Time Elapsed:		3.00 sec
+	Energy Delivered:	0.01 Wh
+	Current:		31.6 A
+	Voltage:		230.0 V[0m
+[0;32mI (35586) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (35796) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 3.00 sec[0m
+[0m
+[0;32mI (36006) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 3.00 sec[0m
+[0m
+[0;32mI (36206) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 3.00 sec[0m
+[0m
+[0;32mI (36406) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 4.00 sec[0m
+[0m
+[0;32mI (36606) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 4.00 sec[0m
+[0m
+[0;32mI (36606) CT: UpdateEnergyCharged(822)
+[0;36m8 - 0[0m
+[0m
+[0;32mI (36616) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580426[0m
+[0m
+[0;32mI (36626) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895626[0m
+[0m
+[0;32mI (36636) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 4, mSessionEnergyCharged 8[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		1
+	Start (monotonic us):	31750071
+	Time Elapsed:		4.00 sec
+	Energy Delivered:	0.01 Wh
+	Current:		31.5 A
+	Voltage:		230.0 V[0m
+[0;32mI (36666) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (36876) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 4.00 sec[0m
+[0m
+[0;32mI (37076) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 4.00 sec[0m
+[0m
+[0;32mI (37276) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 5.00 sec[0m
+[0m
+[0;32mI (37486) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 5.00 sec[0m
+[0m
+[0;32mI (37686) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 5.00 sec[0m
+[0m
+[0;32mI (37686) CT: UpdateEnergyCharged(822)
+[0;36m10 - 0[0m
+[0m
+[0;32mI (37696) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580427[0m
+[0m
+[0;32mI (37706) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895627[0m
+[0m
+[0;32mI (37716) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 5, mSessionEnergyCharged 10[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		1
+	Start (monotonic us):	31750071
+	Time Elapsed:		5.00 sec
+	Energy Delivered:	0.01 Wh
+	Current:		32.4 A
+	Voltage:		230.0 V[0m
+[0;32mI (37736) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (37956) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 5.00 sec[0m
+[0m
+[0;32mI (38156) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 5.00 sec[0m
+[0m
+[0;32mI (38356) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 6.00 sec[0m
+[0m
+[0;32mI (38556) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 6.00 sec[0m
+[0m
+[0;32mI (38756) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 6.00 sec[0m
+[0m
+[0;32mI (38766) CT: UpdateEnergyCharged(822)
+[0;36m12 - 0[0m
+[0m
+[0;32mI (38776) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580428[0m
+[0m
+[0;32mI (38776) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895628[0m
+[0m
+[0;32mI (38786) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 6, mSessionEnergyCharged 12[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		1
+	Start (monotonic us):	31750071
+	Time Elapsed:		6.00 sec
+	Energy Delivered:	0.01 Wh
+	Current:		32.5 A
+	Voltage:		230.0 V[0m
+[0;32mI (38816) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (39026) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 6.00 sec[0m
+[0m
+[0;32mI (39226) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 6.00 sec[0m
+[0m
+[0;32mI (39436) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 7.00 sec[0m
+[0m
+[0;32mI (39636) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 7.00 sec[0m
+[0m
+[0;32mI (39836) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 7.00 sec[0m
+[0m
+[0;32mI (39836) CT: UpdateEnergyCharged(822)
+[0;36m14 - 0[0m
+[0m
+[0;32mI (39846) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580430[0m
+[0m
+[0;32mI (39846) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895630[0m
+[0m
+[0;32mI (39866) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 8, mSessionEnergyCharged 14[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		1
+	Start (monotonic us):	31750071
+	Time Elapsed:		7.00 sec
+	Energy Delivered:	0.01 Wh
+	Current:		31.7 A
+	Voltage:		230.0 V[0m
+[0;32mI (39886) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (40096) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 7.00 sec[0m
+[0m
+[0;32mI (40306) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 8.00 sec[0m
+[0m
+[0;32mI (40506) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 8.00 sec[0m
+[0m
+[0;32mI (40706) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 8.00 sec[0m
+[0m
+[0;32mI (40906) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 8.00 sec[0m
+[0m
+[0;32mI (40916) CT: UpdateEnergyCharged(822)
+[0;36m18 - 0[0m
+[0m
+[0;32mI (40926) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580431[0m
+[0m
+[0;32mI (40926) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895631[0m
+[0m
+[0;32mI (40936) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 9, mSessionEnergyCharged 18[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		1
+	Start (monotonic us):	31750071
+	Time Elapsed:		8.00 sec
+	Energy Delivered:	0.02 Wh
+	Current:		32.2 A
+	Voltage:		230.0 V[0m
+[0;32mI (40966) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (41176) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 8.00 sec[0m
+[0m
+
+[0K[0;32m> [0mh
+[3C
+[0K[0;32m> [0mhw
+[4C[0;32mI (41376) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 9.00 sec[0m
+[0m
+
+[0K[0;32m> [0mhw 
+[5C
+[0K[0;32m> [0mhw c
+[6C
+[0K[0;32m> [0mhw ca
+[7C[0;32mI (41576) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 9.00 sec[0m
+[0m
+
+[0K[0;32m> [0mhw cab
+[8C[0;32mI (41786) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 9.00 sec[0m
+[0m
+
+[0K[0;32m> [0mhw cabl
+[9C
+[0K[0;32m> [0mhw cable
+[10C[0;32mI (41986) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 9.00 sec[0m
+[0m
+[0;32mI (41986) CT: UpdateEnergyCharged(822)
+[0;36m20 - 0[0m
+[0m
+[0;32mI (41996) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580432[0m
+[0m
+[0;32mI (41996) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895632[0m
+[0m
+[0;32mI (42016) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 10, mSessionEnergyCharged 20[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		1
+	Start (monotonic us):	31750071
+	Time Elapsed:		9.00 sec
+	Energy Delivered:	0.02 Wh
+	Current:		31.9 A
+	Voltage:		230.0 V[0m
+
+[0K[0;32m> [0mhw cable 
+[11C[0;32mI (42036) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (42246) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 9.00 sec[0m
+[0m
+[0;32mI (42456) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 10.00 sec[0m
+[0m
+
+[0K[0;32m> [0mhw cable 0
+[12C[0;32mI (42656) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 10.00 sec[0m
+[0m
+
+
+
+[0;32mI (42746) CT: setCableStatus(169)
+[0;36memulator: cable status = NOT_CONNECTED[0m
+[0m
+Done
+
+[6n [999C [6n [115D[0;32m> [0mfindNextStatus
+[0;32mCharger status changed:
+[0;33m[ CHARGING ] >>> [ FINISHING ][0m
+[0;32mI (42856) CT: stopAuthRequest(277)
+[0;36mNo Authorization[0m
+[0m
+[0;32mI (42866) CT: SetState(365)
+[0;36mState updated to 5[0m
+[0m
+[0;32mI (42876) CT: ApplicationCallbackHandler(839)
+[0;36mEVSE callback - state changed[0m
+[0m
+[0;32mI (42886) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580433[0m
+[0m
+[0;32mI (42886) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895633[0m
+[0m
+[0;32mI (42896) CT: ComputeChargingSchedule(1386)
+[0;36m--- ComputeChargingSchedule Start ---[0m
+[0m
+[0;32mI (42906) CT: ComputeChargingSchedule(1387)
+[0;36mCurrent System Time: [09/07/2026 07:00][0m
+[0m
+[0;32mI (42926) CT: ComputeChargingSchedule(1388)
+[0;36mCurrent Day: Thursday (0x10)[0m
+[0m
+[0;32mI (42926) CT: ComputeChargingSchedule(1389)
+[0;36mMinutes Past Midnight: 420[0m
+[0m
+[0;32mI (42936) CT: ComputeChargingSchedule(1406)
+[0;36mComputeChargingSchedule: Not plugged in or charging disabled[0m
+[0m
+[0;32mI (42946) CT: ComputeChargingSchedule(1441)
+[0;36mCharge Profile Summary: Start=[NOT SET], Target=[NOT SET], SoC=0%, Energy=0mWh[0m
+[0m
+[0;32mI (42956) CT: handleStatus_Finishing(120)
+[0;36mFinishing - Time Diff: 10 sec, Energy Delivered: 20 Wh[0m
+[0m
+[0;32mI (42976) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580433[0m
+[0m
+[0;32mI (42976) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895633[0m
+[0m
+[0;32mI (42986) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 11, mSessionEnergyCharged 20[0m
+[0m
+[0;32mI (42996) CT: UpdateEnergyCharged(822)
+[0;36m22 - 0[0m
+[0m
+onSessionEnd
+[0;32mCharging session ended.
+	Duration: 10.00 sec
+	Energy Delivered: 0.02 Wh
+	Last Meter Data:
+		Current L1: 32.1 A
+		Voltage L1: 230.0 V
+[0m
+findNextStatus
+[0;32mCharger status changed:
+[0;33m[ FINISHING ] >>> [ AVAILABLE ][0m
+[0;32mI (45416) CT: resetSessionData(223)
+[0;36mReset Session Data[0m
+[0m
+[0;32mI (45426) CT: SetState(365)
+[0;36mState updated to 0[0m
+[0m
+[0;32mI (45426) CT: ApplicationCallbackHandler(839)
+[0;36mEVSE callback - state changed[0m
+[0m
+[0;32mI (45436) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580435[0m
+[0m
+[0;32mI (45446) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895635[0m
+[0m
+[0;32mI (45456) CT: ComputeChargingSchedule(1386)
+[0;36m--- ComputeChargingSchedule Start ---[0m
+[0m
+[0;32mI (45466) CT: ComputeChargingSchedule(1387)
+[0;36mCurrent System Time: [09/07/2026 07:00][0m
+[0m
+[0;32mI (45476) CT: ComputeChargingSchedule(1388)
+[0;36mCurrent Day: Thursday (0x10)[0m
+[0m
+[0;32mI (45476) CT: ComputeChargingSchedule(1389)
+[0;36mMinutes Past Midnight: 420[0m
+[0m
+[0;32mI (45486) CT: ComputeChargingSchedule(1406)
+[0;36mComputeChargingSchedule: Not plugged in or charging disabled[0m
+[0m
+[0;32mI (45506) CT: ComputeChargingSchedule(1441)
+[0;36mCharge Profile Summary: Start=[NOT SET], Target=[NOT SET], SoC=0%, Energy=0mWh[0m
+[0m
+[0;32mI (45516) CT: handleStatus_Available(62)
+[0;36mMatter[Connected], EV is available[0m
+[0m
+[0;31mE (49006) chip[SWU]: No suitable OTA Provider candidate found[0m
+[0;32mI (49006) chip[SWU]: No provider available[0m
+[0;32mI (106116) chip[EM]: >>> [E:8665r S:9985 M:53323040] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0001:03 (IM:SubscribeRequest) (B:59)[0m
+[0;32mI (106126) chip[DMG]: Final negotiated min/max parameters: Min = 1s, Max = 60s[0m
+[0;32mI (106136) chip[EM]: <<< [E:8665r S:9985 M:130904642 (Ack:53323040)] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0001:05 (IM:ReportData) (B:45)[0m
+[0;32mI (106156) chip[EM]: ??1 [E:8665r S:9985 M:130904642] (S) Msg Retransmission to 1:000000000001B669 in 375ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (106166) chip[EM]: >>> [E:8665r S:9985 M:53323041 (Ack:130904642)] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0001:01 (IM:StatusResponse) (B:42)[0m
+[0;32mI (106186) chip[IM]: Received status response, status is 0x00[0m
+[0;32mI (106186) chip[EM]: <<< [E:8665r S:9985 M:130904643 (Ack:53323041)] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0001:04 (IM:SubscribeResponse) (B:48)[0m
+[0;32mI (106216) chip[EM]: ??1 [E:8665r S:9985 M:130904643] (S) Msg Retransmission to 1:000000000001B669 in 374ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (106226) chip[DMG]: Registered a ReadHandler that will schedule a report between system Timestamp: 0x000000000001A0D7 and system Timestamp 0x000000000002874F.[0m
+[0;32mI (106246) chip[EM]: >>> [E:8665r S:9985 M:53323042 (Ack:130904643)] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+[0;32mI (111426) chip[EM]: >>> [E:8666r S:9985 M:53323043] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0001:03 (IM:SubscribeRequest) (B:59)[0m
+[0;32mI (111436) chip[IM]: Deleting previous subscription from NodeId: 000000000001B669, FabricIndex: 1[0m
+[0;32mI (111486) chip[DMG]: Subscription id 0xdd8c4aed from node <000000000001B669, 1> torn down[0m
+[0;32mI (111496) chip[DMG]: Final negotiated min/max parameters: Min = 1s, Max = 60s[0m
+[0;32mI (111506) chip[EM]: <<< [E:8666r S:9985 M:130904644 (Ack:53323043)] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0001:05 (IM:ReportData) (B:45)[0m
+[0;32mI (111516) chip[EM]: ??1 [E:8666r S:9985 M:130904644] (S) Msg Retransmission to 1:000000000001B669 in 343ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (111556) chip[EM]: >>> [E:8666r S:9985 M:53323044 (Ack:130904644)] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0001:01 (IM:StatusResponse) (B:42)[0m
+[0;32mI (111566) chip[IM]: Received status response, status is 0x00[0m
+[0;32mI (111576) chip[EM]: <<< [E:8666r S:9985 M:130904645 (Ack:53323044)] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0001:04 (IM:SubscribeResponse) (B:48)[0m
+[0;32mI (111596) chip[EM]: ??1 [E:8666r S:9985 M:130904645] (S) Msg Retransmission to 1:000000000001B669 in 398ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (111616) chip[DMG]: Registered a ReadHandler that will schedule a report between system Timestamp: 0x000000000001B5E2 and system Timestamp 0x0000000000029C5A.[0m
+[0;32mI (111646) chip[EM]: >>> [E:8666r S:9985 M:53323045 (Ack:130904645)] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+[0;32mI (116956) chip[EM]: >>> [E:8667r S:9985 M:53323046] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0001:03 (IM:SubscribeRequest) (B:59)[0m
+[0;32mI (116966) chip[IM]: Deleting previous subscription from NodeId: 000000000001B669, FabricIndex: 1[0m
+[0;32mI (116996) chip[DMG]: Subscription id 0xa7be876 from node <000000000001B669, 1> torn down[0m
+[0;32mI (117006) chip[DMG]: Final negotiated min/max parameters: Min = 1s, Max = 60s[0m
+[0;32mI (117016) chip[EM]: <<< [E:8667r S:9985 M:130904646 (Ack:53323046)] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0001:05 (IM:ReportData) (B:45)[0m
+[0;32mI (117026) chip[EM]: ??1 [E:8667r S:9985 M:130904646] (S) Msg Retransmission to 1:000000000001B669 in 386ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (117156) chip[EM]: >>> [E:8667r S:9985 M:53323047 (Ack:130904646)] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0001:01 (IM:StatusResponse) (B:42)[0m
+[0;32mI (117166) chip[IM]: Received status response, status is 0x00[0m
+[0;32mI (117176) chip[EM]: <<< [E:8667r S:9985 M:130904647 (Ack:53323047)] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0001:04 (IM:SubscribeResponse) (B:48)[0m
+[0;32mI (117196) chip[EM]: ??1 [E:8667r S:9985 M:130904647] (S) Msg Retransmission to 1:000000000001B669 in 388ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (117216) chip[DMG]: Registered a ReadHandler that will schedule a report between system Timestamp: 0x000000000001CBC2 and system Timestamp 0x000000000002B23A.[0m
+[0;32mI (117226) chip[EM]: >>> [E:8667r S:9985 M:53323048 (Ack:130904647)] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+[0;32mI (130666) chip[EM]: >>> [E:8668r S:9985 M:53323049] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0001:03 (IM:SubscribeRequest) (B:59)[0m
+[0;32mI (130676) chip[IM]: Deleting previous subscription from NodeId: 000000000001B669, FabricIndex: 1[0m
+[0;32mI (130706) chip[DMG]: Subscription id 0x464bddf0 from node <000000000001B669, 1> torn down[0m
+[0;32mI (130716) chip[DMG]: Final negotiated min/max parameters: Min = 1s, Max = 60s[0m
+[0;32mI (130726) chip[EM]: <<< [E:8668r S:9985 M:130904648 (Ack:53323049)] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0001:05 (IM:ReportData) (B:45)[0m
+[0;32mI (130736) chip[EM]: ??1 [E:8668r S:9985 M:130904648] (S) Msg Retransmission to 1:000000000001B669 in 355ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (130776) chip[EM]: >>> [E:8668r S:9985 M:53323050 (Ack:130904648)] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0001:01 (IM:StatusResponse) (B:42)[0m
+[0;32mI (130786) chip[IM]: Received status response, status is 0x00[0m
+[0;32mI (130796) chip[EM]: <<< [E:8668r S:9985 M:130904649 (Ack:53323050)] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0001:04 (IM:SubscribeResponse) (B:48)[0m
+[0;32mI (130816) chip[EM]: ??1 [E:8668r S:9985 M:130904649] (S) Msg Retransmission to 1:000000000001B669 in 392ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (130836) chip[DMG]: Registered a ReadHandler that will schedule a report between system Timestamp: 0x00000000000200F4 and system Timestamp 0x000000000002E76C.[0m
+[0;32mI (130846) chip[EM]: >>> [E:8668r S:9985 M:53323051 (Ack:130904649)] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+
+[0K[0;32m> [0mh
+[3C
+[0K[0;32m> [0mhw
+[4C
+[0K[0;32m> [0mhw 
+[5C
+[0K[0;32m> [0mhw c
+[6C
+[0K[0;32m> [0mhw ca
+[7C
+[0K[0;32m> [0mhw cab
+[8C
+[0K[0;32m> [0mhw cabl
+[9C
+[0K[0;32m> [0mhw cable
+[10C
+[0K[0;32m> [0mhw cable 
+[11C
+[0K[0;32m> [0mhw cable 1
+[12C
+[0K[0;32m> [0mhw cable 1 
+[13C
+[0K[0;32m> [0mhw cable 1
+[12C
+
+
+[0;32mI (135766) CT: setCableStatus(169)
+[0;36memulator: cable status = CONNECTED[0m
+[0m
+Done
+
+[6n [999C [6n findNextChargerStatus
+[115D[0;32mEV is detected, checking authorization...[0m
+findNextStatus
+[0;32m> [0m[0;32mCharger status changed:
+[0;33m[ AVAILABLE ] >>> [ PREPARING ][0m
+[0;32mI (135786) CT: SetState(365)
+[0;36mState updated to 1[0m
+[0m
+[0;32mI (135796) CT: ApplicationCallbackHandler(839)
+[0;36mEVSE callback - state changed[0m
+[0m
+[0;32mI (135816) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580526[0m
+[0m
+[0;32mI (135816) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895726[0m
+[0m
+[0;32mI (135826) CT: ComputeChargingSchedule(1386)
+[0;36m--- ComputeChargingSchedule Start ---[0m
+[0m
+[0;32mI (135836) CT: ComputeChargingSchedule(1387)
+[0;36mCurrent System Time: [09/07/2026 07:02][0m
+[0m
+[0;32mI (135836) CT: ComputeChargingSchedule(1388)
+[0;36mCurrent Day: Thursday (0x10)[0m
+[0m
+[0;32mI (135846) CT: ComputeChargingSchedule(1389)
+[0;36mMinutes Past Midnight: 422[0m
+[0m
+[0;32mI (135866) CT: SearchNextChargeTargetAcrossDays(1275)
+[0;36mSearching for target on Thursday (searchDay=0)[0m
+[0m
+[0;32mI (135876) CT: SearchNextChargeTargetAcrossDays(1282)
+[0;36mNo more targets found for Thursday[0m
+[0m
+[0;32mI (135876) CT: SearchNextChargeTargetAcrossDays(1275)
+[0;36mSearching for target on Friday (searchDay=1)[0m
+[0m
+[0;32mI (135886) CT: SearchNextChargeTargetAcrossDays(1282)
+[0;36mNo more targets found for Friday[0m
+[0m
+[0;32mI (135906) CT: ComputeChargingSchedule(1425)
+[0;36mComputeChargingSchedule: No target found or error occurred (err=Error CHIP:0x000000D8)[0m
+[0m
+[0;32mI (135916) CT: ComputeChargingSchedule(1441)
+[0;36mCharge Profile Summary: Start=[NOT SET], Target=[NOT SET], SoC=0%, Energy=0mWh[0m
+[0m
+[0;32mI (135926) CT: handleStatus_Preparing(67)
+[0;36mEV is detected, waiting for authorization...[0m
+[0m
+[0;32mI (135936) CT: startAuthRequest(246)
+[0;36mNo Authorization[0m
+[0m
+[0;32mI (135946) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+findNextStatus
+[0;32mCharger status changed:
+[0;33m[ PREPARING ] >>> [ CHARGING ][0m
+[0;32mI (136156) CT: stopAuthRequest(277)
+[0;36mNo Authorization[0m
+[0m
+[0;32mI (136166) CT: SetState(365)
+[0;36mState updated to 3[0m
+[0m
+[0;32mI (136166) CT: ApplicationCallbackHandler(839)
+[0;36mEVSE callback - state changed[0m
+[0m
+[0;32mI (136186) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580526[0m
+[0m
+[0;32mI (136186) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895726[0m
+[0m
+[0;32mI (136196) CT: ComputeChargingSchedule(1386)
+[0;36m--- ComputeChargingSchedule Start ---[0m
+[0m
+[0;32mI (136206) CT: ComputeChargingSchedule(1387)
+[0;36mCurrent System Time: [09/07/2026 07:02][0m
+[0m
+[0;32mI (136206) CT: ComputeChargingSchedule(1388)
+[0;36mCurrent Day: Thursday (0x10)[0m
+[0m
+[0;32mI (136226) CT: ComputeChargingSchedule(1389)
+[0;36mMinutes Past Midnight: 422[0m
+[0m
+[0;32mI (136236) CT: SearchNextChargeTargetAcrossDays(1275)
+[0;36mSearching for target on Thursday (searchDay=0)[0m
+[0m
+[0;32mI (136246) CT: SearchNextChargeTargetAcrossDays(1282)
+[0;36mNo more targets found for Thursday[0m
+[0m
+[0;32mI (136256) CT: SearchNextChargeTargetAcrossDays(1275)
+[0;36mSearching for target on Friday (searchDay=1)[0m
+[0m
+[0;32mI (136256) CT: SearchNextChargeTargetAcrossDays(1282)
+[0;36mNo more targets found for Friday[0m
+[0m
+[0;32mI (136276) CT: ComputeChargingSchedule(1425)
+[0;36mComputeChargingSchedule: No target found or error occurred (err=Error CHIP:0x000000D8)[0m
+[0m
+[0;32mI (136286) CT: ComputeChargingSchedule(1441)
+[0;36mCharge Profile Summary: Start=[NOT SET], Target=[NOT SET], SoC=0%, Energy=0mWh[0m
+[0m
+[0;32mI (136296) CT: handleStatus_Finishing(120)
+[0;36mFinishing - Time Diff: 10 sec, Energy Delivered: 0 Wh[0m
+[0m
+[0;32mI (136306) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580526[0m
+[0m
+[0;32mI (136326) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895726[0m
+[0m
+[0;32mI (136326) CT: StartSession(769)
+[0;36mstarting session at time 836895726, charging meter 0[0m
+[0m
+[0;32mI (136336) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 0.00 sec[0m
+[0m
+[0;32mI (136346) CT: UpdateEnergyCharged(822)
+[0;36m0 - 0[0m
+[0m
+[0;32mI (136346) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580526[0m
+[0m
+[0;32mI (136356) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895726[0m
+[0m
+[0;32mI (136376) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 0, mSessionEnergyCharged 0[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		2
+	Start (monotonic us):	135794914
+	Time Elapsed:		0.00 sec
+	Energy Delivered:	0.00 Wh
+	Current:		0.0 A
+	Voltage:		0.0 V[0m
+[0;32mI (136396) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (136416) CT: startAuthRequest(246)
+[0;36mNo Authorization[0m
+[0m
+[0;32mI (136616) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 0.00 sec[0m
+[0m
+[0;32mI (136816) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 0.00 sec[0m
+[0m
+[0;32mI (137016) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 0.00 sec[0m
+[0m
+[0;32mI (137216) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 0.00 sec[0m
+[0m
+[0;32mI (137426) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 1.00 sec[0m
+[0m
+[0;32mI (137426) CT: UpdateEnergyCharged(822)
+[0;36m2 - 0[0m
+[0m
+[0;32mI (137436) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580527[0m
+[0m
+[0;32mI (137436) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895727[0m
+[0m
+[0;32mI (137446) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 1, mSessionEnergyCharged 2[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		2
+	Start (monotonic us):	135794914
+	Time Elapsed:		1.00 sec
+	Energy Delivered:	0.00 Wh
+	Current:		31.9 A
+	Voltage:		230.0 V[0m
+[0;32mI (137476) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (137686) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 1.00 sec[0m
+[0m
+[0;32mI (137886) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 1.00 sec[0m
+[0m
+[0;32mI (138096) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 1.00 sec[0m
+[0m
+[0;32mI (138296) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 1.00 sec[0m
+[0m
+[0;32mI (138496) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 2.00 sec[0m
+[0m
+[0;32mI (138496) CT: UpdateEnergyCharged(822)
+[0;36m4 - 0[0m
+[0m
+[0;32mI (138506) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580528[0m
+[0m
+[0;32mI (138516) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895728[0m
+[0m
+[0;32mI (138526) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 2, mSessionEnergyCharged 4[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		2
+	Start (monotonic us):	135794914
+	Time Elapsed:		2.00 sec
+	Energy Delivered:	0.00 Wh
+	Current:		31.8 A
+	Voltage:		230.0 V[0m
+[0;32mI (138546) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (138766) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 2.00 sec[0m
+[0m
+[0;32mI (138966) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 2.00 sec[0m
+[0m
+[0;32mI (139166) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 2.00 sec[0m
+[0m
+[0;32mI (139366) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 3.00 sec[0m
+[0m
+[0;32mI (139576) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 3.00 sec[0m
+[0m
+[0;32mI (139576) CT: UpdateEnergyCharged(822)
+[0;36m6 - 0[0m
+[0m
+[0;32mI (139586) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580529[0m
+[0m
+[0;32mI (139586) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895729[0m
+[0m
+[0;32mI (139596) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 3, mSessionEnergyCharged 6[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		2
+	Start (monotonic us):	135794914
+	Time Elapsed:		3.00 sec
+	Energy Delivered:	0.01 Wh
+	Current:		31.7 A
+	Voltage:		230.0 V[0m
+[0;32mI (139626) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (139836) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 3.00 sec[0m
+[0m
+[0;32mI (140036) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 3.00 sec[0m
+[0m
+[0;32mI (140246) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 3.00 sec[0m
+[0m
+[0;32mI (140446) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 4.00 sec[0m
+[0m
+[0;32mI (140646) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 4.00 sec[0m
+[0m
+[0;32mI (140646) CT: UpdateEnergyCharged(822)
+[0;36m8 - 0[0m
+[0m
+[0;32mI (140666) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580530[0m
+[0m
+[0;32mI (140666) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895730[0m
+[0m
+[0;32mI (140676) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 4, mSessionEnergyCharged 8[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		2
+	Start (monotonic us):	135794914
+	Time Elapsed:		4.00 sec
+	Energy Delivered:	0.01 Wh
+	Current:		31.9 A
+	Voltage:		230.0 V[0m
+[0;32mI (140706) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (140916) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 4.00 sec[0m
+[0m
+[0;32mI (141116) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 4.00 sec[0m
+[0m
+[0;32mI (141316) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 5.00 sec[0m
+[0m
+[0;32mI (141526) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 5.00 sec[0m
+[0m
+[0;32mI (141726) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 5.00 sec[0m
+[0m
+[0;32mI (141726) CT: UpdateEnergyCharged(822)
+[0;36m10 - 0[0m
+[0m
+[0;32mI (141736) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580531[0m
+[0m
+[0;32mI (141736) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895731[0m
+[0m
+[0;32mI (141746) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 5, mSessionEnergyCharged 10[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		2
+	Start (monotonic us):	135794914
+	Time Elapsed:		5.00 sec
+	Energy Delivered:	0.01 Wh
+	Current:		32.1 A
+	Voltage:		230.0 V[0m
+[0;32mI (141776) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (141986) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 5.00 sec[0m
+[0m
+[0;32mI (142196) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 5.00 sec[0m
+[0m
+[0;32mI (142396) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 6.00 sec[0m
+[0m
+[0;32mI (142596) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 6.00 sec[0m
+[0m
+[0;32mI (142796) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 6.00 sec[0m
+[0m
+[0;32mI (142796) CT: UpdateEnergyCharged(822)
+[0;36m12 - 0[0m
+[0m
+[0;32mI (142816) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580533[0m
+[0m
+[0;32mI (142816) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895733[0m
+[0m
+[0;32mI (142826) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 7, mSessionEnergyCharged 12[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		2
+	Start (monotonic us):	135794914
+	Time Elapsed:		6.00 sec
+	Energy Delivered:	0.01 Wh
+	Current:		32.5 A
+	Voltage:		230.0 V[0m
+[0;32mI (142856) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (143066) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 6.00 sec[0m
+[0m
+[0;32mI (143266) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 6.00 sec[0m
+[0m
+[0;32mI (143466) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 7.00 sec[0m
+[0m
+[0;32mI (143666) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 7.00 sec[0m
+[0m
+[0;32mI (143876) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 7.00 sec[0m
+[0m
+[0;32mI (143876) CT: UpdateEnergyCharged(822)
+[0;36m14 - 0[0m
+[0m
+[0;32mI (143876) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580534[0m
+[0m
+[0;32mI (143886) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895734[0m
+[0m
+[0;32mI (143896) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 8, mSessionEnergyCharged 14[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		2
+	Start (monotonic us):	135794914
+	Time Elapsed:		7.00 sec
+	Energy Delivered:	0.01 Wh
+	Current:		32.3 A
+	Voltage:		230.0 V[0m
+[0;32mI (143926) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (144136) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 7.00 sec[0m
+[0m
+[0;32mI (144346) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 8.00 sec[0m
+[0m
+[0;32mI (144546) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 8.00 sec[0m
+[0m
+[0;32mI (144746) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 8.00 sec[0m
+[0m
+[0;32mI (144946) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 8.00 sec[0m
+[0m
+[0;32mI (144956) CT: UpdateEnergyCharged(822)
+[0;36m16 - 0[0m
+[0m
+[0;32mI (144966) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580535[0m
+[0m
+[0;32mI (144966) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895735[0m
+[0m
+[0;32mI (144976) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 9, mSessionEnergyCharged 16[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		2
+	Start (monotonic us):	135794914
+	Time Elapsed:		8.00 sec
+	Energy Delivered:	0.02 Wh
+	Current:		31.6 A
+	Voltage:		230.0 V[0m
+[0;32mI (145006) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (145216) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 8.00 sec[0m
+[0m
+[0;32mI (145416) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 9.00 sec[0m
+[0m
+
+[0K[0;32m> [0mh
+[3C
+[0K[0;32m> [0mhw
+[4C
+[0K[0;32m> [0mhw 
+[5C[0;32mI (145616) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 9.00 sec[0m
+[0m
+
+[0K[0;32m> [0mhw c
+[6C
+[0K[0;32m> [0mhw ca
+[7C[0;32mI (145826) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 9.00 sec[0m
+[0m
+
+[0K[0;32m> [0mhw cab
+[8C[0;32mI (146026) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 9.00 sec[0m
+[0m
+[0;32mI (146026) CT: UpdateEnergyCharged(822)
+[0;36m20 - 0[0m
+[0m
+
+[0K[0;32m> [0mhw cabl
+[9C[0;32mI (146036) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580536[0m
+[0m
+[0;32mI (146036) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895736[0m
+[0m
+[0;32mI (146056) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 10, mSessionEnergyCharged 20[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		2
+	Start (monotonic us):	135794914
+	Time Elapsed:		9.00 sec
+	Energy Delivered:	0.02 Wh
+	Current:		32.4 A
+	Voltage:		230.0 V[0m
+[0;32mI (146086) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (146296) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 9.00 sec[0m
+[0m
+
+[0K[0;32m> [0mhw cable
+[10C[0;32mI (146496) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 10.00 sec[0m
+[0m
+[0;32mI (146706) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 10.00 sec[0m
+[0m
+[0;32mI (146906) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 10.00 sec[0m
+[0m
+
+[0K[0;32m> [0mhw cable 
+[11C[0;32mI (147106) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 10.00 sec[0m
+[0m
+[0;32mI (147106) CT: UpdateEnergyCharged(822)
+[0;36m22 - 0[0m
+[0m
+[0;32mI (147126) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580537[0m
+[0m
+[0;32mI (147126) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895737[0m
+[0m
+[0;32mI (147136) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 11, mSessionEnergyCharged 22[0m
+[0m
+showChargingSessionInfo
+[0;32mCharging Session Info:
+	Session ID:		2
+	Start (monotonic us):	135794914
+	Time Elapsed:		10.00 sec
+	Energy Delivered:	0.02 Wh
+	Current:		32.1 A
+	Voltage:		230.0 V[0m
+[0;32mI (147166) CT: IsChargingAllowedByTargets(509)
+[0;36mNo charging schedule set (Null). Defaulting to ALLOW.[0m
+[0m
+[0;32mI (147376) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 11.00 sec[0m
+[0m
+
+[0K[0;32m> [0mhw cable 0
+[12C[0;32mI (147576) CT: runExecChargingLikeCase(528)
+[0;36mTime Elapsed: 11.00 sec[0m
+[0m
+
+
+
+[0;32mI (147666) CT: setCableStatus(169)
+[0;36memulator: cable status = NOT_CONNECTED[0m
+[0m
+Done
+
+[6n [999C [6n [115D[0;32m> [0mfindNextStatus
+[0;32mCharger status changed:
+[0;33m[ CHARGING ] >>> [ FINISHING ][0m
+[0;32mI (147776) CT: stopAuthRequest(277)
+[0;36mNo Authorization[0m
+[0m
+[0;32mI (147796) CT: SetState(365)
+[0;36mState updated to 5[0m
+[0m
+[0;32mI (147796) CT: ApplicationCallbackHandler(839)
+[0;36mEVSE callback - state changed[0m
+[0m
+[0;32mI (147806) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580538[0m
+[0m
+[0;32mI (147806) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895738[0m
+[0m
+[0;32mI (147816) CT: ComputeChargingSchedule(1386)
+[0;36m--- ComputeChargingSchedule Start ---[0m
+[0m
+[0;32mI (147826) CT: ComputeChargingSchedule(1387)
+[0;36mCurrent System Time: [09/07/2026 07:02][0m
+[0m
+[0;32mI (147846) CT: ComputeChargingSchedule(1388)
+[0;36mCurrent Day: Thursday (0x10)[0m
+[0m
+[0;32mI (147846) CT: ComputeChargingSchedule(1389)
+[0;36mMinutes Past Midnight: 422[0m
+[0m
+[0;32mI (147856) CT: ComputeChargingSchedule(1406)
+[0;36mComputeChargingSchedule: Not plugged in or charging disabled[0m
+[0m
+[0;32mI (147866) CT: ComputeChargingSchedule(1441)
+[0;36mCharge Profile Summary: Start=[NOT SET], Target=[NOT SET], SoC=0%, Energy=0mWh[0m
+[0m
+[0;32mI (147886) CT: handleStatus_Finishing(120)
+[0;36mFinishing - Time Diff: 11 sec, Energy Delivered: 22 Wh[0m
+[0m
+[0;32mI (147896) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580538[0m
+[0m
+[0;32mI (147896) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895738[0m
+[0m
+[0;32mI (147906) CT: RecalculateSessionDuration(817)
+[0;36mRecalculate Session Duration: 12, mSessionEnergyCharged 22[0m
+[0m
+[0;32mI (147916) CT: UpdateEnergyCharged(822)
+[0;36m22 - 0[0m
+[0m
+onSessionEnd
+[0;32mCharging session ended.
+	Duration: 11.00 sec
+	Energy Delivered: 0.02 Wh
+	Last Meter Data:
+		Current L1: 32.1 A
+		Voltage L1: 230.0 V
+[0m
+findNextStatus
+[0;32mCharger status changed:
+[0;33m[ FINISHING ] >>> [ AVAILABLE ][0m
+[0;32mI (150346) CT: resetSessionData(223)
+[0;36mReset Session Data[0m
+[0m
+[0;32mI (150356) CT: SetState(365)
+[0;36mState updated to 0[0m
+[0m
+[0;32mI (150356) CT: ApplicationCallbackHandler(839)
+[0;36mEVSE callback - state changed[0m
+[0m
+[0;32mI (150376) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580540[0m
+[0m
+[0;32mI (150376) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895740[0m
+[0m
+[0;32mI (150386) CT: ComputeChargingSchedule(1386)
+[0;36m--- ComputeChargingSchedule Start ---[0m
+[0m
+[0;32mI (150396) CT: ComputeChargingSchedule(1387)
+[0;36mCurrent System Time: [09/07/2026 07:02][0m
+[0m
+[0;32mI (150406) CT: ComputeChargingSchedule(1388)
+[0;36mCurrent Day: Thursday (0x10)[0m
+[0m
+[0;32mI (150416) CT: ComputeChargingSchedule(1389)
+[0;36mMinutes Past Midnight: 422[0m
+[0m
+[0;32mI (150426) CT: ComputeChargingSchedule(1406)
+[0;36mComputeChargingSchedule: Not plugged in or charging disabled[0m
+[0m
+[0;32mI (150436) CT: ComputeChargingSchedule(1441)
+[0;36mCharge Profile Summary: Start=[NOT SET], Target=[NOT SET], SoC=0%, Energy=0mWh[0m
+[0m
+[0;32mI (150446) CT: handleStatus_Available(62)
+[0;36mMatter[Connected], EV is available[0m
+[0m
+
+
+
+[6n [999C [6n [115D[0;32m> [0m
+
+
+[6n [999C [6n [115D[0;32m> [0m[0;32mI (160976) chip[EM]: >>> [E:8669r S:9985 M:53323052] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0001:0A (IM:TimedRequest) (B:39)[0m
+[0;32mI (160996) chip[EM]: <<< [E:8669r S:9985 M:130904650 (Ack:53323052)] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0001:01 (IM:StatusResponse) (B:42)[0m
+[0;32mI (161006) chip[EM]: ??1 [E:8669r S:9985 M:130904650] (S) Msg Retransmission to 1:000000000001B669 in 403ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (161026) chip[EM]: >>> [E:8669r S:9985 M:53323053 (Ack:130904650)] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0001:08 (IM:InvokeCommandRequest) (B:89)[0m
+[0;32mI (161036) chip[SVR]: DayOfWeekForSequence = 0x7f[0m
+[0;32mI (161036) chip[SVR]: [0] MinutesPastMidnight : 423[0m
+[0;32mI (161056) CT: SetTargets(282)
+[0;36mEnergyEvseDelegate::SetTargets()[0m
+[0m
+[0;32mI (161056) CT: SetTargets(269)
+[0;36mSetTargets[0m
+[0m
+[0;32mI (161066) CT: SetTargets(295)
+[0;36mSetTargets: DayOfWeekForSequence = 0x7f[0m
+[0m
+[0;32mI (161066) CT: PrintTargets(487)
+[0;36m---------------------- TARGETS ---------------------[0m
+[0m
+[0;32mI (161076) CT: PrintTargets(511)
+[0;36m---------------------- TARGETS ---------------------[0m
+[0m
+[0;32mI (161096) CT: SaveTargets(417)
+[0;36mSaveTargets: DayOfWeekForSequence = 0x7f[0m
+[0m
+[0;32mI (161096) CT: SaveTargets(453)
+[0;36mSaveTargets: length written 0x000000000000001A[0m
+[0m
+[0;32mI (161106) CT: LoadTargets(168)
+[0;36mLoadTargets: DayOfWeekForSequence = 0x7f[0m
+[0m
+[0;32mI (161116) CT: SetTargets(396)
+[0;36mSetTargets: Failed to load Target from persistent storage Error CHIP:0x00000021[0m
+[0m
+[0;31mE (161136) chip[DMG]: Endpoint=1 Cluster=0x0000_0099 Command=0x0000_0005 status 0x01 (no additional context)[0m
+[0;32mI (161136) chip[EM]: <<< [E:8669r S:9985 M:130904651 (Ack:53323053)] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0001:09 (IM:InvokeCommandResponse) (B:67)[0m
+[0;32mI (161166) chip[EM]: ??1 [E:8669r S:9985 M:130904651] (S) Msg Retransmission to 1:000000000001B669 in 333ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (161196) chip[EM]: >>> [E:8669r S:9985 M:53323054 (Ack:130904651)] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+[0;32mI (167886) chip[EM]: >>> [E:8670r S:9985 M:53323055] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0001:0A (IM:TimedRequest) (B:39)[0m
+[0;32mI (167896) chip[EM]: <<< [E:8670r S:9985 M:130904652 (Ack:53323055)] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0001:01 (IM:StatusResponse) (B:42)[0m
+[0;32mI (167916) chip[EM]: ??1 [E:8670r S:9985 M:130904652] (S) Msg Retransmission to 1:000000000001B669 in 351ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (167946) chip[EM]: >>> [E:8670r S:9985 M:53323056 (Ack:130904652)] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0001:08 (IM:InvokeCommandRequest) (B:63)[0m
+[0;32mI (167966) CT: ClearTargets(325)
+[0;36mEnergyEvseDelegate::ClearTargets()[0m
+[0m
+[0;32mI (167986) CT: ApplicationCallbackHandler(858)
+[0;36mEVSE callback - ChargingPreferencesChanged[0m
+[0m
+[0;32mI (167986) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580558[0m
+[0m
+[0;32mI (167996) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895758[0m
+[0m
+[0;32mI (168006) CT: ComputeChargingSchedule(1386)
+[0;36m--- ComputeChargingSchedule Start ---[0m
+[0m
+[0;32mI (168016) CT: ComputeChargingSchedule(1387)
+[0;36mCurrent System Time: [09/07/2026 07:02][0m
+[0m
+[0;32mI (168026) CT: ComputeChargingSchedule(1388)
+[0;36mCurrent Day: Thursday (0x10)[0m
+[0m
+[0;32mI (168036) CT: ComputeChargingSchedule(1389)
+[0;36mMinutes Past Midnight: 422[0m
+[0m
+[0;32mI (168036) CT: ComputeChargingSchedule(1406)
+[0;36mComputeChargingSchedule: Not plugged in or charging disabled[0m
+[0m
+[0;32mI (168046) CT: ComputeChargingSchedule(1441)
+[0;36mCharge Profile Summary: Start=[NOT SET], Target=[NOT SET], SoC=0%, Energy=0mWh[0m
+[0m
+[0;32mI (168066) chip[EM]: <<< [E:8670r S:9985 M:130904653 (Ack:53323056)] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0001:09 (IM:InvokeCommandResponse) (B:67)[0m
+[0;32mI (168086) chip[EM]: ??1 [E:8670r S:9985 M:130904653] (S) Msg Retransmission to 1:000000000001B669 in 341ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (168256) chip[EM]: >>> [E:8670r S:9985 M:53323057 (Ack:130904653)] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+[0;32mI (184536) chip[EM]: >>> [E:8671r S:0 M:19737060] (U) Msg RX from 0:40A058821A66B18C [0000] to 0000000000000000 --- Type 0000:30 (SecureChannel:CASE_Sigma1) (B:234)[0m
+[0;32mI (184546) chip[IN]: CASE Server received Sigma1 message . Starting handshake. EC 0x3fca8250[0m
+[0;32mI (184546) chip[EM]: <<< [E:8671r S:0 M:90291328 (Ack:19737060)] (U) Msg TX from 0000000000000000 to 0:40A058821A66B18C [0000] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:26)[0m
+[0;32mI (184576) chip[SC]: Received Sigma1 msg[0m
+[0;32mI (184576) chip[EM]: <<< [E:8671r S:0 M:90291329 (Ack:19737060)] (U) Msg TX from 0000000000000000 to 0:40A058821A66B18C [0000] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0000:33 (SecureChannel:CASE_Sigma2Resume) (B:100)[0m
+[0;32mI (184596) chip[EM]: ??1 [E:8671r S:0 M:90291329] (U) Msg Retransmission to 0:0000000000000000 in 393ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (184616) chip[EM]: >>> [E:8671r S:0 M:19737061 (Ack:90291329)] (U) Msg RX from 0:40A058821A66B18C [0000] to 0000000000000000 --- Type 0000:40 (SecureChannel:StatusReport) (B:34)[0m
+[0;32mI (184626) chip[SC]: Success status report received. Session was established[0m
+[0;32mI (184686) chip[SC]: SecureSession[0x3fca69d0, LSID:9986]: State change 'kEstablishing' --> 'kActive'[0m
+[0;32mI (184686) chip[IN]: CASE Session established to peer: <000000000001B669, 1>[0m
+[0;32mI (184706) chip[EM]: <<< [E:8671r S:0 M:90291330 (Ack:19737061)] (U) Msg TX from 0000000000000000 to 0:40A058821A66B18C [0000] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:26)[0m
+[0;32mI (184716) chip[EM]: >>> [E:8672r S:9986 M:131919321] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0001:0A (IM:TimedRequest) (B:39)[0m
+[0;32mI (184736) chip[EM]: <<< [E:8672r S:9986 M:62615913 (Ack:131919321)] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0001:01 (IM:StatusResponse) (B:42)[0m
+[0;32mI (184756) chip[EM]: ??1 [E:8672r S:9986 M:62615913] (S) Msg Retransmission to 1:000000000001B669 in 374ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (184776) CT: HandleMatterEventCb(285)
+[0;36mEvent[0x8018] Not implmentated![0m
+[0m
+[0;32mI (184776) chip[EM]: >>> [E:8672r S:9986 M:131919322 (Ack:62615913)] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0001:08 (IM:InvokeCommandRequest) (B:63)[0m
+[0;32mI (184796) CT: Disable(167)
+[0;36mEnergyEvseDelegate::Disable()[0m
+[0m
+[0;32mI (184806) CT: SetChargingEnabledUntil(435)
+[0;36mChargingEnabledUntil updated to 0[0m
+[0m
+[0;32mI (184806) CT: SetDischargingEnabledUntil(462)
+[0;36mDischargingEnabledUntil updated to 0[0m
+[0m
+[0;32mI (184816) CT: SetMinimumChargeCurrent(492)
+[0;36mMinimumChargeCurrent updated to 0 mA[0m
+[0m
+[0;32mI (184826) CT: ComputeMaxChargeCurrentLimit(1206)
+[0;36mMaximumChargeCurrent updated to 0[0m
+[0m
+[0;32mI (184846) CT: ApplicationCallbackHandler(845)
+[0;36mEVSE callback - maxChargeCurrent changed to 0[0m
+[0m
+[0;32mI (184846) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580575[0m
+[0m
+[0;32mI (184856) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895775[0m
+[0m
+[0;32mI (184866) CT: ComputeChargingSchedule(1386)
+[0;36m--- ComputeChargingSchedule Start ---[0m
+[0m
+[0;32mI (184876) CT: ComputeChargingSchedule(1387)
+[0;36mCurrent System Time: [09/07/2026 07:02][0m
+[0m
+[0;32mI (184876) CT: ComputeChargingSchedule(1388)
+[0;36mCurrent Day: Thursday (0x10)[0m
+[0m
+[0;32mI (184896) CT: ComputeChargingSchedule(1389)
+[0;36mMinutes Past Midnight: 422[0m
+[0m
+[0;32mI (184906) CT: ComputeChargingSchedule(1406)
+[0;36mComputeChargingSchedule: Not plugged in or charging disabled[0m
+[0m
+[0;32mI (184916) CT: ComputeChargingSchedule(1441)
+[0;36mCharge Profile Summary: Start=[NOT SET], Target=[NOT SET], SoC=0%, Energy=0mWh[0m
+[0m
+setChargingSessionCurrentLimit
+[0;32mCharging session current limit set to 0 mA[0m
+[0;32mI (184936) CT: SetSupplyState(389)
+[0;36mSupplyState updated to 0[0m
+[0m
+[0;32mI (184946) CT: ApplicationCallbackHandler(839)
+[0;36mEVSE callback - state changed[0m
+[0m
+[0;32mI (184946) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580575[0m
+[0m
+[0;32mI (184956) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895775[0m
+[0m
+[0;32mI (184966) CT: ComputeChargingSchedule(1386)
+[0;36m--- ComputeChargingSchedule Start ---[0m
+[0m
+[0;32mI (184976) CT: ComputeChargingSchedule(1387)
+[0;36mCurrent System Time: [09/07/2026 07:02][0m
+[0m
+[0;32mI (184986) CT: ComputeChargingSchedule(1388)
+[0;36mCurrent Day: Thursday (0x10)[0m
+[0m
+[0;32mI (184996) CT: ComputeChargingSchedule(1389)
+[0;36mMinutes Past Midnight: 422[0m
+[0m
+[0;32mI (185006) CT: ComputeChargingSchedule(1406)
+[0;36mComputeChargingSchedule: Not plugged in or charging disabled[0m
+[0m
+[0;32mI (185016) CT: ComputeChargingSchedule(1441)
+[0;36mCharge Profile Summary: Start=[NOT SET], Target=[NOT SET], SoC=0%, Energy=0mWh[0m
+[0m
+[0;32mI (185036) chip[EM]: <<< [E:8672r S:9986 M:62615914 (Ack:131919322)] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0001:09 (IM:InvokeCommandResponse) (B:67)[0m
+[0;32mI (185046) chip[EM]: ??1 [E:8672r S:9986 M:62615914] (S) Msg Retransmission to 1:000000000001B669 in 411ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (185066) chip[EM]: >>> [E:8672r S:9986 M:131919323 (Ack:62615914)] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+findNextStatus
+[0;32mCharger status changed:
+[0;33m[ AVAILABLE ] >>> [ UNAVAILABLE ][0m
+[0;32mI (185096) CT: handleStatus_Unavailable(125)
+[0;36mCharger is in UNAVAILABLE state, show unavailable message on UI[0m
+[0m
+[0;32mI (190836) chip[EM]: <<< [E:821i S:9986 M:62615915] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0001:05 (IM:ReportData) (B:86)[0m
+[0;32mI (190846) chip[EM]: ??1 [E:821i S:9986 M:62615915] (S) Msg Retransmission to 1:000000000001B669 in 560ms [State:Idle II:500 AI:300 AT:4000][0m
+[0;32mI (190906) chip[EM]: >>> [E:821i S:9986 M:131919324 (Ack:62615915)] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0001:01 (IM:StatusResponse) (B:42)[0m
+[0;32mI (190916) chip[IM]: Received status response, status is 0x00[0m
+[0;32mI (190926) chip[EM]: <<< [E:821i S:9986 M:62615916 (Ack:131919324)] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+
+
+
+[6n [999C [6n [115D[0;32m> [0m
+
+
+[6n [999C [6n [115D[0;32m> [0m
+
+
+[6n [999C [6n [115D[0;32m> [0m
+
+
+[6n [999C [6n [115D[0;32m> [0m[0;32mI (201016) chip[EM]: >>> [E:8673r S:9986 M:131919325] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0001:0A (IM:TimedRequest) (B:39)[0m
+[0;32mI (201036) chip[EM]: <<< [E:8673r S:9986 M:62615917 (Ack:131919325)] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0001:01 (IM:StatusResponse) (B:42)[0m
+[0;32mI (201046) chip[EM]: ??1 [E:8673r S:9986 M:62615917] (S) Msg Retransmission to 1:000000000001B669 in 412ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (201066) chip[EM]: >>> [E:8673r S:9986 M:131919326 (Ack:62615917)] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0001:08 (IM:InvokeCommandRequest) (B:73)[0m
+[0;32mI (201076) CT: EnableCharging(188)
+[0;36mEnableCharging CMD received: chargingEnabledUntil=null, minCC=6000, maxCC=32000[0m
+[0m
+[0;32mI (201096) CT: EnableCharging(193)
+[0;36mEnergyEvseDelegate::EnableCharging()[0m
+[0m
+[0;32mI (201106) CT: EnableCharging(216)
+[0;36mCharging enabled indefinitely[0m
+[0m
+[0;32mI (201106) CT: SetChargingEnabledUntil(431)
+[0;36mChargingEnabledUntil updated to Null[0m
+[0m
+[0;32mI (201116) CT: SetMinimumChargeCurrent(492)
+[0;36mMinimumChargeCurrent updated to 6000 mA[0m
+[0m
+[0;32mI (201126) CT: ComputeMaxChargeCurrentLimit(1206)
+[0;36mMaximumChargeCurrent updated to 32000[0m
+[0m
+[0;32mI (201136) CT: ApplicationCallbackHandler(845)
+[0;36mEVSE callback - maxChargeCurrent changed to 32000[0m
+[0m
+[0;32mI (201146) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580591[0m
+[0m
+[0;32mI (201156) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895791[0m
+[0m
+[0;32mI (201166) CT: ComputeChargingSchedule(1386)
+[0;36m--- ComputeChargingSchedule Start ---[0m
+[0m
+[0;32mI (201166) CT: ComputeChargingSchedule(1387)
+[0;36mCurrent System Time: [09/07/2026 07:03][0m
+[0m
+[0;32mI (201186) CT: ComputeChargingSchedule(1388)
+[0;36mCurrent Day: Thursday (0x10)[0m
+[0m
+[0;32mI (201196) CT: ComputeChargingSchedule(1389)
+[0;36mMinutes Past Midnight: 423[0m
+[0m
+[0;32mI (201196) CT: ComputeChargingSchedule(1406)
+[0;36mComputeChargingSchedule: Not plugged in or charging disabled[0m
+[0m
+[0;32mI (201206) CT: ComputeChargingSchedule(1441)
+[0;36mCharge Profile Summary: Start=[NOT SET], Target=[NOT SET], SoC=0%, Energy=0mWh[0m
+[0m
+setChargingSessionCurrentLimit
+[0;32mCharging session current limit set to 32000 mA[0m
+[0;32mI (201236) CT: SetSupplyState(389)
+[0;36mSupplyState updated to 1[0m
+[0m
+[0;32mI (201246) CT: ApplicationCallbackHandler(839)
+[0;36mEVSE callback - state changed[0m
+[0m
+[0;32mI (201246) CT: GetEpochTS(72)
+[0;36mDEBUG: Matter SDK Unix Epoch: 1783580591[0m
+[0m
+[0;32mI (201256) CT: GetEpochTS(81)
+[0;36mDEBUG: Final Chip/Matter Epoch: 836895791[0m
+[0m
+[0;32mI (201266) CT: ComputeChargingSchedule(1386)
+[0;36m--- ComputeChargingSchedule Start ---[0m
+[0m
+[0;32mI (201276) CT: ComputeChargingSchedule(1387)
+[0;36mCurrent System Time: [09/07/2026 07:03][0m
+[0m
+[0;32mI (201286) CT: ComputeChargingSchedule(1388)
+[0;36mCurrent Day: Thursday (0x10)[0m
+[0m
+[0;32mI (201296) CT: ComputeChargingSchedule(1389)
+[0;36mMinutes Past Midnight: 423[0m
+[0m
+[0;32mI (201306) CT: ComputeChargingSchedule(1406)
+[0;36mComputeChargingSchedule: Not plugged in or charging disabled[0m
+[0m
+[0;32mI (201306) CT: ComputeChargingSchedule(1441)
+[0;36mCharge Profile Summary: Start=[NOT SET], Target=[NOT SET], SoC=0%, Energy=0mWh[0m
+[0m
+findNextStatus
+[0;32mCharger status changed:
+[0;33m[ UNAVAILABLE ] >>> [ AVAILABLE ][0m
+[0;32mI (201326) chip[EM]: <<< [E:8673r S:9986 M:62615918 (Ack:131919326)] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0001:09 (IM:InvokeCommandResponse) (B:67)[0;32mI (201336) CT: handleStatus_Available(62)
+[0;36mMatter[Connected], EV is available[0m
+[0m
+[0m
+[0;32mI (201356) chip[EM]: ??1 [E:8673r S:9986 M:62615918] (S) Msg Retransmission to 1:000000000001B669 in 362ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (201376) chip[EM]: >>> [E:8673r S:9986 M:131919327 (Ack:62615918)] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+[0;32mI (211976) chip[EM]: >>> [E:8674r S:9986 M:131919328] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0001:02 (IM:ReadRequest) (B:51)[0m
+[0;32mI (211996) chip[EM]: <<< [E:8674r S:9986 M:62615919 (Ack:131919328)] (S) Msg TX from 0000000000007283 to 1:000000000001B669 [EB1E] [UDP:[FE80::18CD:6A:1B25:9274%st1]:60671] --- Type 0001:05 (IM:ReportData) (B:70)[0m
+[0;32mI (212006) chip[EM]: ??1 [E:8674r S:9986 M:62615919] (S) Msg Retransmission to 1:000000000001B669 in 406ms [State:Active II:500 AI:300 AT:4000][0m
+[0;32mI (212026) chip[EM]: >>> [E:8674r S:9986 M:131919329 (Ack:62615919)] (S) Msg RX from 1:000000000001B669 [EB1E] to 0000000000007283 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+
+[0K[0;32m> [0mK
+[3C
+[0K[0;32m> [0m
+[2C
+[0K[0;32m> [0mA
+[3C
+[0K[0;32m> [0mAK
+[4C
+[0K[0;32m> [0mA
+[3C
+[0K[0;32m> [0m
+[2C 

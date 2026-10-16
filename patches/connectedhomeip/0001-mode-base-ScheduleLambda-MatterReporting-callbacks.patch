@@ -1,0 +1,50 @@
+diff --git a/src/app/clusters/mode-base-server/mode-base-server.cpp b/src/app/clusters/mode-base-server/mode-base-server.cpp
+index 092985d082..eba5532c07 100644
+--- a/src/app/clusters/mode-base-server/mode-base-server.cpp
++++ b/src/app/clusters/mode-base-server/mode-base-server.cpp
+@@ -176,7 +176,10 @@ Status Instance::UpdateCurrentMode(uint8_t aNewMode)
+         // Write new value to persistent storage.
+         ConcreteAttributePath path = ConcreteAttributePath(mEndpointId, mClusterId, Attributes::CurrentMode::Id);
+         GetSafeAttributePersistenceProvider()->WriteScalarValue(path, mCurrentMode);
+-        MatterReportingAttributeChangeCallback(path);
++
++        chip::DeviceLayer::SystemLayer().ScheduleLambda([path]() {
++            MatterReportingAttributeChangeCallback(path);
++        });
+     }
+     return Protocols::InteractionModel::Status::Success;
+ }
+@@ -197,7 +200,9 @@ Status Instance::UpdateStartUpMode(DataModel::Nullable<uint8_t> aNewStartUpMode)
+         // Write new value to persistent storage.
+         ConcreteAttributePath path = ConcreteAttributePath(mEndpointId, mClusterId, Attributes::StartUpMode::Id);
+         GetSafeAttributePersistenceProvider()->WriteScalarValue(path, mStartUpMode);
+-        MatterReportingAttributeChangeCallback(path);
++        chip::DeviceLayer::SystemLayer().ScheduleLambda([path]() {
++            MatterReportingAttributeChangeCallback(path);
++        });
+     }
+     return Protocols::InteractionModel::Status::Success;
+ }
+@@ -218,7 +223,9 @@ Status Instance::UpdateOnMode(DataModel::Nullable<uint8_t> aNewOnMode)
+         // Write new value to persistent storage.
+         ConcreteAttributePath path = ConcreteAttributePath(mEndpointId, mClusterId, Attributes::OnMode::Id);
+         GetSafeAttributePersistenceProvider()->WriteScalarValue(path, mOnMode);
+-        MatterReportingAttributeChangeCallback(path);
++        chip::DeviceLayer::SystemLayer().ScheduleLambda([path]() {
++            MatterReportingAttributeChangeCallback(path);
++        });
+     }
+     return Protocols::InteractionModel::Status::Success;
+ }
+@@ -240,7 +247,10 @@ DataModel::Nullable<uint8_t> Instance::GetOnMode() const
+ 
+ void Instance::ReportSupportedModesChange()
+ {
+-    MatterReportingAttributeChangeCallback(ConcreteAttributePath(mEndpointId, mClusterId, Attributes::SupportedModes::Id));
++    ConcreteAttributePath path = ConcreteAttributePath(mEndpointId, mClusterId, Attributes::SupportedModes::Id);
++    chip::DeviceLayer::SystemLayer().ScheduleLambda([path]() {
++        MatterReportingAttributeChangeCallback(path);
++    });
+ }
+ 
+ bool Instance::HasFeature(Feature feature) const

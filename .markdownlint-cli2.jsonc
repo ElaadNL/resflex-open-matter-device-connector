@@ -1,0 +1,23 @@
+// SPDX-FileCopyrightText: ElaadNL
+// SPDX-License-Identifier: Apache-2.0
+{
+  "config": ".markdownlint.yaml",
+  "ignores": [
+    // Vendored esp-matter documentation. Kept byte-identical to upstream, so
+    // it is not linted: fixing the findings would mean modifying upstream files.
+    "components/**",
+    "device_hal/**",
+    // Ignore all vendored example docs EXCEPT examples/energy_evse/ (ElaadNL's).
+    "examples/!(energy_evse)/**",
+    "tools/**",
+    "docs/en/**",
+    "docs/README.md",
+    "RELEASE_NOTES.md",
+    "SUPPORTED_DEVICE_TYPES.md",
+    // Build and dependency output
+    "node_modules/**",
+    "managed_components/**",
+    "**/build/**",
+    "LICENSES/**"
+  ]
+}
